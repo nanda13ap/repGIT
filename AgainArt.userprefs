@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{9EC1CE10-1EF7-4434-8945-C0B49F2EFF5A}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AgainArt Status">
+    <Files>
+      <File FileName="AgainArt/Controllers/HomeController.cs" Line="13" Column="10" />
+      <File FileName="AgainArt Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AgainArt PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

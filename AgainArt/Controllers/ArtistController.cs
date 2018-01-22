@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using AgainArt.Models;
 namespace AgainArt.Controllers
 {
     public class ArtistController : Controller
     {
         public ActionResult Index()
         {
+            MVCArtistContext db = new MVCArtistContext();
+            db.Artista.Add(new Artist(){ Id = 1, Nome = "Fernanda"});
+            db.SaveChanges();
+
             return View ();
         }
 

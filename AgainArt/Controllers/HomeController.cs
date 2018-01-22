@@ -15,8 +15,8 @@ namespace AgainArt.Controllers
             var isMono = Type.GetType("Mono.Runtime") != null;
 
             ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
-            ViewData["Runtime"] = isMono ? "Mono" : ".NET";
-
+            ViewData["Runtime"] = isMono ? "Mono fer hcon" : ".NETfer";
+            ViewData["viewFer"] = "Dentrooooooo";
             return View();
         }
     }

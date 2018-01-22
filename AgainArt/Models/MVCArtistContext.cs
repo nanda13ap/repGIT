@@ -15,6 +15,11 @@ namespace AgainArt.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+
+        public void Insert ()
+        {
+            
+        }
        
        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

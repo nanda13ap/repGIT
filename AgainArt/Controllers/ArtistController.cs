@@ -11,7 +11,7 @@ namespace AgainArt.Controllers
         public ActionResult Index()
         {
             MVCArtistContext db = new MVCArtistContext();
-            db.Artista.Add(new Artist(){ Id = 1, Nome = "Fernanda"});
+            db.Artista.Add(new Artist(){ Id = 2, Nome = "Rubens"});
             db.SaveChanges();
 
             return View ();

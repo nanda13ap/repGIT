@@ -21,11 +21,20 @@ namespace AgainArt.Models
         {
             get;
             set;
-   
+
+        }
+
+
+        [Required]
+        public string About
+        {
+            get;
+            set;
+
         }
         public Artist()
         {
-            
-    }
+
+        }
     }
 }

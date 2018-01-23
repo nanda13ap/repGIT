@@ -21,3 +21,6 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\EntityFramework.SqlServer.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.pdb
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csprojResolveAssemblyReference.cache
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.InitialCreate.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csproj.GenerateResource.Cache
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.InicialDB.resources

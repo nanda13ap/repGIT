@@ -1,14 +1,53 @@
-﻿@{
+﻿@model AgainArt.Models.Artist
+
+@{
     Layout = null;
 }
 
-pppp
+Pagina de artista
 
-@using (Html.BeginForm("Index","Artist"))
+@using (Html.BeginForm())
 {
+    <p>
+        @Html.LabelFor(a => a.Nome);
+        @Html.TextBoxFor(a => a.Nome);
+    </p>
 
-   <input type="submit" value="Create" />
+    <p>
+        @Html.LabelFor(a => a.About);
+        @Html.TextBoxFor(a => a.About);
+    </p>
 
-} 
+    @Html.ActionLink("Create Artist", "Insert", "Artist", Model, new { @class = "btn" });
+    @Html.ActionLink("Create Artist", "Insert", Model, new { @class = "btn" })
 
-@Html.ActionLink("your text", "Index", "Artist")
+    @Html.ActionLink("Next >>", "Insert", new { controller = "Artist" }, new { @class = "btn" })
+   
+
+    <p>
+        <input type="submit" value="Search Artista" />
+        @Html.TextBox("txtIdSearch");
+    </p>
+    //dd mandar metodo inteiro por post
+
+}
+
+
+<div>
+    @{
+        string valor = "Sem valor";
+
+        if (Model != null)
+        {
+            valor = @Model.Nome;
+        }
+
+        else { valor = "Oi"; }
+    }
+
+    @Html.Label(valor);
+    @Html.DisplayFor(model => model.Nome);
+    @Html.DisplayFor(fer => fer.Nome);
+
+
+</div>

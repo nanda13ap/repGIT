@@ -10,60 +10,78 @@ namespace AgainArt.Controllers
     {
         public ActionResult Index()
         {
+            //MVCArtistContext db = new MVCArtistContext();
+            //db.Artista.Add(new Artist() { Id = 2, Nome = "Rubens", About = "Legal" });
+            //db.SaveChanges();
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Details(int txtIdSearch)
+        {
             MVCArtistContext db = new MVCArtistContext();
-            db.Artista.Add(new Artist(){ Id = 2, Nome = "Rubens"});
+            Artist objArtista = db.Artista.FirstOrDefault(a => a.Id == txtIdSearch);
+
+            return View("Index", objArtista);
+        }
+
+
+        public ActionResult Insert(Artist objArtista)
+        {
+            MVCArtistContext db = new MVCArtistContext();
+            db.Artista.Add(objArtista);
             db.SaveChanges();
 
-            return View ();
+            return View();
         }
-
-        public ActionResult Details(int id)
-        {
-            return View ();
-        }
-
-        public ActionResult Create()
-        {
-            return View ();
-        } 
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try {
-                return RedirectToAction ("Index");
-            } catch {
-                return View ();
+            try
+            {
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
             }
         }
-        
+
         public ActionResult Edit(int id)
         {
-            return View ();
+            return View();
         }
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try {
-                return RedirectToAction ("Index");
-            } catch {
-                return View ();
+            try
+            {
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
             }
         }
 
         public ActionResult Delete(int id)
         {
-            return View ();
+            return View();
         }
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try {
-                return RedirectToAction ("Index");
-            } catch {
-                return View ();
+            try
+            {
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
             }
         }
     }

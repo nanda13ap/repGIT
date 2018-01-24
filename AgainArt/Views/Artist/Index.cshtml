@@ -9,23 +9,24 @@ Pagina de artista
 @using (Html.BeginForm())
 {
     <p>
-        @Html.LabelFor(a => a.Nome);
+        @Html.DisplayNameFor(a => a.Nome);
         @Html.TextBoxFor(a => a.Nome);
     </p>
 
     <p>
-        @Html.LabelFor(a => a.About);
+        @Html.DisplayNameFor(a => a.About);
         @Html.TextBoxFor(a => a.About);
     </p>
 
-    @Html.ActionLink("Create Artist", "Insert", "Artist", Model, new { @class = "btn" });
-    @Html.ActionLink("Create Artist", "Insert", Model, new { @class = "btn" })
+    <p>
+        @Html.ActionLink("Create Artist", "Insert", "Artist", Model, new { @class = "btn" });
 
-    @Html.ActionLink("Next >>", "Insert", new { controller = "Artist" }, new { @class = "btn" })
-   
+    </p>
+
+    <input type="submit" name="btnCriar" value="Accept" formaction=@Url.Action("Insert","Artist") formmethod="post" class="btn btn-primary" />
 
     <p>
-        <input type="submit" value="Search Artista" />
+        <input type="submit" name="btnPesquisar" value="Search Artista" formaction=@Url.Action("Details","Artist") formmethod="post" class="btn btn-primary" />
         @Html.TextBox("txtIdSearch");
     </p>
     //dd mandar metodo inteiro por post

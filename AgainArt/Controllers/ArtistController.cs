@@ -33,7 +33,7 @@ namespace AgainArt.Controllers
             db.Artista.Add(objArtista);
             db.SaveChanges();
 
-            return View();
+            return View("Index");
         }
 
         [HttpPost]

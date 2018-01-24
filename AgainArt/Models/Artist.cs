@@ -8,6 +8,7 @@ namespace AgainArt.Models
     public class Artist
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public int Id
         {

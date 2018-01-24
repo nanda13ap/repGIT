@@ -30,7 +30,7 @@ namespace AgainArt.Controllers
         public ActionResult Insert(Artist objArtista)
         {
             MVCArtistContext db = new MVCArtistContext();
-            db.Artista.Add(objArtista);
+            db.Artista.Add(objArtista); 
             db.SaveChanges();
 
             return View("Index");

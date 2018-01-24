@@ -5,23 +5,25 @@ namespace AgainArt.Models
 {
     public class MVCArtistContext : DbContext
     {
-        public MVCArtistContext():base("name=MVCArtistContext")
+        public MVCArtistContext() : base("name=MVCArtistContext")
         {
 
         }
 
         public virtual DbSet<Artist> Artista { get; set; }
 
+        public virtual DbSet<ArtWork> ArtWork { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
-       
-       /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            // Specify the path of the database here
-            optionsBuilder.UseSqlite("Filename=./video_games.sqlite");
-        }
-        */
-       
+
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+         {
+             // Specify the path of the database here
+             optionsBuilder.UseSqlite("Filename=./video_games.sqlite");
+         }
+         */
+
     }
 }

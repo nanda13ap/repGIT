@@ -81,10 +81,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
+    <Folder Include="Content\ArtWorkImages\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\ArtWork\" />
+    <Folder Include="Views\Gallery\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ArtWorkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -98,8 +101,17 @@
     <Compile Include="Migrations\201801231502258_InicialDB.Designer.cs">
       <DependentUpon>201801231502258_InicialDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801241842372_AddingArtWork.cs" />
+    <Compile Include="Migrations\201801241842372_AddingArtWork.Designer.cs">
+      <DependentUpon>201801241842372_AddingArtWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801241956403_AddingArtWork2.cs" />
+    <Compile Include="Migrations\201801241956403_AddingArtWork2.Designer.cs">
+      <DependentUpon>201801241956403_AddingArtWork2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\ArtWork.cs" />
     <Compile Include="Models\MVCArtistContext.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
   </ItemGroup>
@@ -142,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801231502258_InicialDB.resx">
       <DependentUpon>201801231502258_InicialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241842372_AddingArtWork.resx">
+      <DependentUpon>201801241842372_AddingArtWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801241956403_AddingArtWork2.resx">
+      <DependentUpon>201801241956403_AddingArtWork2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

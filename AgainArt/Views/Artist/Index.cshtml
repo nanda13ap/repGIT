@@ -51,4 +51,13 @@ Pagina de artista
     @Html.DisplayFor(fer => fer.Nome);
 
 
+    <p>
+
+        <label for="file">Upload File:</label><input type="file" name="file" id="file" />
+    </p>
+    <p>
+        <input type="submit" formmethod="post" formaction=@Url.Action("Add","ArtWorkController") formenctype="multipart/form-data" value="Upload File" />
+        @Html.ActionLink("Sei la upload", "Add", "ArtWorkController");
+    </p>
+
 </div>

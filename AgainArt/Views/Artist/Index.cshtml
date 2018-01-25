@@ -45,20 +45,23 @@ Pagina de artista
 
     @*<p>
 
-        <label for="file">Upload File:</label><input type="file" name="file" id="file" lang="en-us" />
-    </p>
-        <p>
-            @Html.TextBox("txtDescription");
+            <label for="file">Upload File:</label><input type="file" name="file" id="file" lang="en-us" />
         </p>
+            <p>
+                @Html.TextBox("txtDescription");
+            </p>
 
-        <input type="submit" formmethod="post" formaction=@Url.Action("Add","ArtWorkController") formenctype="multipart/form-data" value="Upload File" lang="en-us" />*@
-
+            <input type="submit" formmethod="post" formaction=@Url.Action("Add","ArtWorkController") formenctype="multipart/form-data" value="Upload File" lang="en-us" />*@
+ 
 
 
 }
 
-@using (Html.BeginForm("Add", "ArtWorkController", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+@using (Html.BeginForm("Add", "ArtWork", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    @Html.Label("Description:");
+    @Html.TextBox("txtDescription");
     <input type="file" name="file" />
     <input type="submit" value="OK" />
 }

@@ -21,8 +21,11 @@ namespace AgainArt.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(ArtWork objArtWork)
+        public ActionResult Add(HttpPostedFileBase file)
         {
+            ArtWork objArtWork = new ArtWork();
+            objArtWork.FileURL = file.FileName;
+
             if (ModelState.IsValid)
             {
                 MVCArtistContext db = new MVCArtistContext();

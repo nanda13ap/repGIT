@@ -23,14 +23,14 @@ namespace AgainArt.Controllers
             MVCArtistContext db = new MVCArtistContext();
             Artist objArtista = db.Artista.FirstOrDefault(a => a.Id == txtIdSearch);
 
-            return View("Index", objArtista);
+            return View("Index", new Gallery() { Artist = objArtista });
         }
 
 
-        public ActionResult Insert(Artist objArtista)
+        public ActionResult Insert(Gallery galeria)
         {
             MVCArtistContext db = new MVCArtistContext();
-            db.Artista.Add(objArtista); 
+            db.Artista.Add(galeria.Artist);
             db.SaveChanges();
 
             return View("Index");

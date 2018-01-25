@@ -1,4 +1,4 @@
-﻿@model AgainArt.Models.Artist
+﻿@model AgainArt.Models.Gallery
 
 @{
     Layout = null;
@@ -9,55 +9,57 @@ Pagina de artista
 @using (Html.BeginForm())
 {
     <p>
-        @Html.DisplayNameFor(a => a.Nome);
-        @Html.TextBoxFor(a => a.Nome);
+        @Html.DisplayNameFor(a => a.Artist.Nome);
+        @Html.TextBoxFor(a => a.Artist.Nome);
     </p>
 
     <p>
-        @Html.DisplayNameFor(a => a.About);
-        @Html.TextBoxFor(a => a.About);
+        @Html.DisplayNameFor(a => a.Artist.About);
+        @Html.TextBoxFor(a => a.Artist.About);
     </p>
 
-    <p>
-        @Html.ActionLink("Create Artist", "Insert", "Artist", Model, new { @class = "btn" });
-
-    </p>
-
-    <input type="submit" name="btnCriar" value="Accept" formaction=@Url.Action("Insert","Artist") formmethod="post" class="btn btn-primary" />
+    <input type="submit" name="btnCriar" value="Inserir Artista" formaction=@Url.Action("Insert","Artist") formmethod="post" class="btn btn-primary" />
 
     <p>
         <input type="submit" name="btnPesquisar" value="Search Artista" formaction=@Url.Action("Details","Artist") formmethod="post" class="btn btn-primary" />
         @Html.TextBox("txtIdSearch");
     </p>
-    //dd mandar metodo inteiro por post
+
+    {
+
+
+        if (Model != null && Model.Artist != null)
+        {
+            @Html.DisplayFor(model => model.Artist.Nome);
+        }
+
+        @*@Html.Label(valor);*@
+
+
+    }
+
+    @*@Html.DisplayNameFor(a=>a.*@
+
+
+
+
+    @*<p>
+
+        <label for="file">Upload File:</label><input type="file" name="file" id="file" lang="en-us" />
+    </p>
+        <p>
+            @Html.TextBox("txtDescription");
+        </p>
+
+        <input type="submit" formmethod="post" formaction=@Url.Action("Add","ArtWorkController") formenctype="multipart/form-data" value="Upload File" lang="en-us" />*@
+
+
 
 }
 
+@using (Html.BeginForm("Add", "ArtWorkController", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" />
+    <input type="submit" value="OK" />
+}
 
-<div>
-    @{
-        string valor = "Sem valor";
-
-        if (Model != null)
-        {
-            valor = @Model.Nome;
-        }
-
-        else { valor = "Oi"; }
-    }
-
-    @Html.Label(valor);
-    @Html.DisplayFor(model => model.Nome);
-    @Html.DisplayFor(fer => fer.Nome);
-
-
-    <p>
-
-        <label for="file">Upload File:</label><input type="file" name="file" id="file" />
-    </p>
-    <p>
-        <input type="submit" formmethod="post" formaction=@Url.Action("Add","ArtWorkController") formenctype="multipart/form-data" value="Upload File" />
-        @Html.ActionLink("Sei la upload", "Add", "ArtWorkController");
-    </p>
-
-</div>

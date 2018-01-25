@@ -112,6 +112,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\ArtWork.cs" />
+    <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\MVCArtistContext.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
   </ItemGroup>

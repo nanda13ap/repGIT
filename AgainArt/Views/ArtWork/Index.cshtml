@@ -1,0 +1,23 @@
+﻿@model AgainArt.Models.Gallery
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*fazer for simples para multiplos de 3 e tal*@
+
+
+@if (Model != null)
+{
+    foreach (AgainArt.Models.ArtWork ak in Model.LstArtWork)
+    {
+        <div class="w3-row w3-grayscale-min">
+            <div class="w3-quarter">
+                <img src=@ak.FileURL style="width:100%" onclick="onClick(this)" alt="@ak.Description">
+
+            </div>
+        </div>
+    }
+}
+

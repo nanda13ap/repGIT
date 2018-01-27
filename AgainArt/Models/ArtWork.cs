@@ -32,7 +32,7 @@ namespace AgainArt.Models
         [Required]
         public string Description { get; set; }
 
-        public ContentType ContentType { get; set; }
+        public string ContentType { get; set; }
 
         public int ContentLength { get; set; }
 

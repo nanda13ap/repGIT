@@ -19,13 +19,8 @@ namespace AgainArt.Controllers
             return View();
         }
 
-        public ActionResult List()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Add(HttpPostedFileBase file)
+        public ActionResult Add(HttpPostedFileBase file, string txtArtDescription)
         {
             if (ModelState.IsValid)
             {
@@ -47,7 +42,9 @@ namespace AgainArt.Controllers
                             objArtWork.OriginalName = file.FileName;
                             objArtWork.IdArtista = 1;// na mao o codigo do artista
                             objArtWork.GeneratedName = Path.GetFileNameWithoutExtension(objArtWork.OriginalName) + "_" + Guid.NewGuid() + Path.GetExtension(objArtWork.OriginalName);
-                            //objArtWork.ContentType = file.ContentType.ToString();
+                            objArtWork.ImageData = new byte[file.ContentLength];
+                            objArtWork.Description = txtArtDescription;
+                            objArtWork.ContentType = file.ContentType;
 
 
                             //attach the uploaded image to the object before saving to Database
@@ -63,7 +60,7 @@ namespace AgainArt.Controllers
                             savedThumbFile = Path.Combine(filePathThumbnail, objArtWork.GeneratedName);
 
                             file.SaveAs(savedFileName);
-                            objArtWork.FileURL = savedFileName;
+                            objArtWork.FileURL = Path.Combine("/Content/ArtWorkImages/Original", objArtWork.GeneratedName);
 
                             //Read image back from file and create thumbnail from it
                             var imageFile = savedFileName; //Path.Combine(Server.MapPath("~/Content/ArtWorkImages/Original"), objArtWork.GeneratedName);
@@ -77,7 +74,7 @@ namespace AgainArt.Controllers
                                 graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
                                 graphics.DrawImage(srcImage, new Rectangle(0, 0, 100, 100));
                                 newImage.Save(stream, ImageFormat.Png);
-                                objArtWork.ThumbNailURL = savedThumbFile;
+                                objArtWork.ThumbNailURL = Path.Combine("/Content/ArtWorkImages/Thumbnail", objArtWork.GeneratedName);
                                 //HttpPostedFileBase oi = newImage;
                                 newImage.Save(savedThumbFile);
                                 //var thumbNew = File(stream.ToArray(), "image/png");
@@ -103,12 +100,11 @@ namespace AgainArt.Controllers
                                 System.IO.File.Delete(savedThumbFile);
                             }
 
-
                         }
                     }
                 }
             }
-            return View();
+            return View("Index");
 
         }
 
@@ -123,7 +119,7 @@ namespace AgainArt.Controllers
             MVCArtistContext db = new MVCArtistContext();
             List<ArtWork> lstArtWork = null;
 
-            if (objSearch == null)
+            if (objSearch == null || string.IsNullOrEmpty(objSearch.Description))
             {
                 lstArtWork = db.ArtWork.ToList();
             }
@@ -132,7 +128,7 @@ namespace AgainArt.Controllers
                 lstArtWork = db.ArtWork.Where(a => a.OriginalName.Contains(objSearch.OriginalName)).ToList();
             }
 
-            return View();
+            return View("index", new Gallery() { LstArtWork = lstArtWork });
         }
     }
 }

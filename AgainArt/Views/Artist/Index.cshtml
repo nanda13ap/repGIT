@@ -61,8 +61,13 @@ Pagina de artista
 @using (Html.BeginForm("Add", "ArtWork", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.Label("Description:");
-    @Html.TextBox("txtDescription");
+    @Html.TextBox("txtArtDescription");
     <input type="file" name="file" />
     <input type="submit" value="OK" />
 }
 
+@using (Html.BeginForm("List", "ArtWork", FormMethod.Post))
+{
+    <input type="submit" value="Listar Obras" />
+
+}

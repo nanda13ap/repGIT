@@ -26,3 +26,5 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csproj.Generat
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.pdb
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.novaQUadro.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csprojResolveAssemblyReference.cache
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.insertQuadro.resources

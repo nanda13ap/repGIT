@@ -47,6 +47,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -84,9 +85,11 @@
   <ItemGroup>
     <Folder Include="Content\ArtWorkImages\Original\" />
     <Folder Include="Content\ArtWorkImages\ThumbNail\" />
+    <Folder Include="Views\Email\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ArtWorkController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -133,6 +136,7 @@
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\ArtWork.cs" />
     <Compile Include="Models\Gallery.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\MVCArtistContext.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
   </ItemGroup>

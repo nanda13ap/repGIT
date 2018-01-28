@@ -56,5 +56,19 @@ namespace AgainArt.Models
                 _lstArtWork = value;
             }
         }
+
+        private Email _email;
+        public Email Email
+        {
+            get
+            {
+                if (_email == null)
+                {
+                    _email = new Email();
+                }
+                return _email;
+            }
+            set { _email = value; }
+        }
     }
 }

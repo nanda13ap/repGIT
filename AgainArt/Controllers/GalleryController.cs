@@ -23,5 +23,8 @@ namespace AgainArt.Controllers
 
             return View("Gallery", galleryObject);
         }
+
+        
+
     }
 }

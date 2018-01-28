@@ -84,10 +84,10 @@
   <ItemGroup>
     <Folder Include="Content\ArtWorkImages\Original\" />
     <Folder Include="Content\ArtWorkImages\ThumbNail\" />
-    <Folder Include="Views\Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ArtWorkController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -116,6 +116,18 @@
     <Compile Include="Migrations\201801261432507_insertQuadro.cs" />
     <Compile Include="Migrations\201801261432507_insertQuadro.Designer.cs">
       <DependentUpon>201801261432507_insertQuadro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801272252312_insertColumsArtist.cs" />
+    <Compile Include="Migrations\201801272252312_insertColumsArtist.Designer.cs">
+      <DependentUpon>201801272252312_insertColumsArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801272255011_insertColumnName.cs" />
+    <Compile Include="Migrations\201801272255011_insertColumnName.Designer.cs">
+      <DependentUpon>201801272255011_insertColumnName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801272348155_changinColumn.cs" />
+    <Compile Include="Migrations\201801272348155_changinColumn.Designer.cs">
+      <DependentUpon>201801272348155_changinColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artist.cs" />
@@ -150,6 +162,11 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Artist\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\MasterPage.cshtml" />
+    <Content Include="Views\Gallery\PhotoGrid.cshtml" />
+    <Content Include="Views\Gallery\AboutSection.cshtml" />
+    <Content Include="Views\Gallery\ContactSection.cshtml" />
+    <Content Include="Views\Gallery\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <!--<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
@@ -183,6 +200,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801261432507_insertQuadro.resx">
       <DependentUpon>201801261432507_insertQuadro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801272252312_insertColumsArtist.resx">
+      <DependentUpon>201801272252312_insertColumsArtist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801272255011_insertColumnName.resx">
+      <DependentUpon>201801272255011_insertColumnName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801272348155_changinColumn.resx">
+      <DependentUpon>201801272348155_changinColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

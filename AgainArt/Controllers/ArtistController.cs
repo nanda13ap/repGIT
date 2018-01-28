@@ -26,6 +26,13 @@ namespace AgainArt.Controllers
             return View("Index", new Gallery() { Artist = objArtista });
         }
 
+        public Artist ShowInfo(int txtIdSearch)
+        {
+            MVCArtistContext db = new MVCArtistContext();
+            Artist objArtista = db.Artista.FirstOrDefault(a => a.Id == txtIdSearch);
+            return objArtista;
+        }
+
 
         public ActionResult Insert(Gallery galeria)
         {

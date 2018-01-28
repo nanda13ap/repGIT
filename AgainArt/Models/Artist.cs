@@ -17,12 +17,29 @@ namespace AgainArt.Models
         }
 
         [Required]
-        [StringLength(200)]
-        public string Nome
+        [StringLength(100)]
+        public string Name
         {
             get;
             set;
 
+        }
+
+        [StringLength(100)]
+        public string LastName
+        {
+            get;
+            set;
+
+        }
+
+        [NotMapped]
+        public string FullName
+        {
+            get
+            {
+                return String.Format("{0} {1}", Name, LastName);
+            }
         }
 
 
@@ -33,6 +50,21 @@ namespace AgainArt.Models
             set;
 
         }
+
+        public string Email
+        {
+            get;
+            set;
+
+        }
+
+        public string TelephoneNumber
+        {
+            get;
+            set;
+
+        }
+
         public Artist()
         {
 

@@ -1,0 +1,12 @@
+﻿@model AgainArt.Models.Gallery
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+
+@RenderPage("~/Views/Gallery/PhotoGrid.cshtml");
+@RenderPage("~/Views/Gallery/AboutSection.cshtml");
+@RenderPage("~/Views/Gallery/ContactSection.cshtml");
+

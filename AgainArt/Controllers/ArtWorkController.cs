@@ -130,5 +130,16 @@ namespace AgainArt.Controllers
 
             return View("index", new Gallery() { LstArtWork = lstArtWork });
         }
+
+        public List<ArtWork> List()
+        {
+            MVCArtistContext db = new MVCArtistContext();
+            List<ArtWork> lstArtWork = null;
+
+            lstArtWork = db.ArtWork.ToList();
+
+            return lstArtWork;
+        }
+
     }
 }

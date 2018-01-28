@@ -28,3 +28,6 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.pdb
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.novaQUadro.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csprojResolveAssemblyReference.cache
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.insertQuadro.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.insertColumsArtist.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.insertColumnName.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.changinColumn.resources

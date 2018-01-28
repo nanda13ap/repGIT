@@ -9,8 +9,8 @@ Pagina de artista
 @using (Html.BeginForm())
 {
     <p>
-        @Html.DisplayNameFor(a => a.Artist.Nome);
-        @Html.TextBoxFor(a => a.Artist.Nome);
+        @Html.DisplayNameFor(a => a.Artist.Name);
+        @Html.TextBoxFor(a => a.Artist.Name);
     </p>
 
     <p>
@@ -30,7 +30,7 @@ Pagina de artista
 
         if (Model != null && Model.Artist != null)
         {
-            @Html.DisplayFor(model => model.Artist.Nome);
+            @Html.DisplayFor(model => model.Artist.Name);
         }
 
         @*@Html.Label(valor);*@

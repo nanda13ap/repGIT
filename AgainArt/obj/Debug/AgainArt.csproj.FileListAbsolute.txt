@@ -22,12 +22,11 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.Ini
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.InicialDB.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.AddingArtWork.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.AddingArtWork2.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csproj.GenerateResource.Cache
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.dll
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.pdb
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.novaQUadro.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csprojResolveAssemblyReference.cache
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.insertQuadro.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.insertColumsArtist.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.insertColumnName.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.changinColumn.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csproj.GenerateResource.Cache
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.dll
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.pdb

@@ -148,6 +148,7 @@
     <Content Include="Images\girl_train.jpg" />
     <Content Include="Images\man_bench.jpg" />
     <Content Include="Images\natureboy.jpg" />
+    <None Include="ProfileFernanda.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -1,0 +1,51 @@
+﻿@model AgainArt.Models.Gallery
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*fazer for simples para multiplos de 3 e tal*@
+
+
+@if (Model != null)
+{
+    int qtdPerSection = 2;
+    int qtdItem = Model.LstArtWork.Count();
+    int resto = qtdItem % qtdPerSection;
+    int bloco = resto > 0 ? 1 : 0;
+    bloco = bloco + (qtdItem / qtdPerSection);
+    int contador = 0;
+
+
+
+    for (int i = 0; i < bloco; i++)
+    {
+        <div class="w3-row w3-grayscale-min">
+
+            @for (int j = 0; j < qtdPerSection; j++)
+            {
+                if (contador < qtdItem)
+                {
+                    <div class="w3-third">
+                        @*AgainArt.Models.ArtWork oi = @Model.LstArtWork[contador];*@
+                        <img src=@Model.LstArtWork[contador].FileURL style="width:100%" onclick="onClick(this)" alt="@Model.LstArtWork[contador].Description">
+                    </div>
+                }
+                @:contador++;
+            }
+        </div>
+    }
+
+
+    @*foreach (AgainArt.Models.ArtWork ak in Model.LstArtWork)
+    {
+        <div class="w3-row w3-grayscale-min">
+            <div class="w3-quarter">
+                <img src=@ak.FileURL style="width:100%" onclick="onClick(this)" alt="@ak.Description">
+
+            </div>
+        </div>
+    }*@
+}
+

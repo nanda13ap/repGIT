@@ -1,4 +1,3 @@
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\obj\Debug\AgainArt.Tests.csprojResolveAssemblyReference.cache
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\bin\Debug\AgainArt.Tests.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\bin\Debug\AgainArt.Tests.pdb
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\bin\Debug\AgainArt.dll
@@ -20,5 +19,6 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\bin\Debug\System.Web.WebPag
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\bin\Debug\System.Web.Mvc.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\bin\Debug\nunit.framework.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\bin\Debug\EntityFramework.xml
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\obj\Debug\AgainArt.Tests.csprojResolveAssemblyReference.cache
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\obj\Debug\AgainArt.Tests.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt.Tests\obj\Debug\AgainArt.Tests.pdb

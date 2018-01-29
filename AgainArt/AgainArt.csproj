@@ -132,6 +132,10 @@
     <Compile Include="Migrations\201801272348155_changinColumn.Designer.cs">
       <DependentUpon>201801272348155_changinColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801290006542_addCOl.cs" />
+    <Compile Include="Migrations\201801290006542_addCOl.Designer.cs">
+      <DependentUpon>201801290006542_addCOl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\ArtWork.cs" />
@@ -141,6 +145,7 @@
     <Compile Include="Controllers\ArtistController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Bears_24215f65-8cfc-48cb-8b24-67e83b320fac.jpg" />
     <Content Include="Images\Bears.jpg" />
     <Content Include="Images\boy.jpg" />
     <Content Include="Images\girl.jpg" />
@@ -150,6 +155,7 @@
     <Content Include="Images\natureboy.jpg" />
     <None Include="ProfileFernanda.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\PatrickErika.jpg" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801272348155_changinColumn.resx">
       <DependentUpon>201801272348155_changinColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801290006542_addCOl.resx">
+      <DependentUpon>201801290006542_addCOl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

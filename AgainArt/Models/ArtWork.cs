@@ -38,6 +38,15 @@ namespace AgainArt.Models
 
         public byte[] ImageData { get; set; }
 
+        public enum EnumPaintingType
+        {
+            StillLife = 1
+                , Figures = 2
+                , Landscape
+        }
+
+        public int PaintingType { get; set; }
+
         [ForeignKey("Artista")]
         public int IdArtista { get; set; }
         public virtual Artist Artista { get; set; }

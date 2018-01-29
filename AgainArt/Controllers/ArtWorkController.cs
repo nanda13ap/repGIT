@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using static AgainArt.Models.ArtWork;
 
 namespace AgainArt.Controllers
 {
@@ -60,7 +61,7 @@ namespace AgainArt.Controllers
                             savedThumbFile = Path.Combine(filePathThumbnail, objArtWork.GeneratedName);
 
                             file.SaveAs(savedFileName);
-                            objArtWork.FileURL = Path.Combine("/Content/ArtWorkImages/Original", objArtWork.GeneratedName);
+                            objArtWork.FileURL = String.Format("~/Content/ArtWorkImages/Original/{0}", objArtWork.GeneratedName);
 
                             //Read image back from file and create thumbnail from it
                             var imageFile = savedFileName; //Path.Combine(Server.MapPath("~/Content/ArtWorkImages/Original"), objArtWork.GeneratedName);
@@ -74,7 +75,7 @@ namespace AgainArt.Controllers
                                 graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
                                 graphics.DrawImage(srcImage, new Rectangle(0, 0, 100, 100));
                                 newImage.Save(stream, ImageFormat.Png);
-                                objArtWork.ThumbNailURL = Path.Combine("/Content/ArtWorkImages/Thumbnail", objArtWork.GeneratedName);
+                                objArtWork.ThumbNailURL = String.Format("~/Content/ArtWorkImages/ThumbNail/{0}", objArtWork.GeneratedName);
                                 //HttpPostedFileBase oi = newImage;
                                 newImage.Save(savedThumbFile);
                                 //var thumbNew = File(stream.ToArray(), "image/png");
@@ -139,6 +140,17 @@ namespace AgainArt.Controllers
             lstArtWork = db.ArtWork.ToList();
 
             return lstArtWork;
+        }
+
+        public ArtWork SearchForCategory(EnumPaintingType type)
+        {
+            MVCArtistContext db = new MVCArtistContext();
+            ArtWork objArtWork = null;
+
+            int ptype = Convert.ToInt32(type);
+            objArtWork = db.ArtWork.FirstOrDefault(a => a.PaintingType == ptype);
+
+            return objArtWork;
         }
 
     }

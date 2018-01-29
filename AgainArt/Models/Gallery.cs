@@ -38,6 +38,23 @@ namespace AgainArt.Models
             set { _artWork = value; }
         }
 
+        private List<ArtWork> _lstArtWorkCategory;
+
+        public List<ArtWork> LstArtWorkCategory
+        {
+            get
+            {
+                if (_lstArtWorkCategory == null)
+                {
+                    _lstArtWorkCategory = new List<ArtWork>();
+                }
+                return _lstArtWorkCategory;
+            }
+            set
+            {
+                _lstArtWorkCategory = value;
+            }
+        }
 
         private List<ArtWork> _lstArtWork;
 

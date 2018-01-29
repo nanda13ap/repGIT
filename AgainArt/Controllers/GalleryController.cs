@@ -15,16 +15,20 @@ namespace AgainArt.Controllers
             MVCArtistContext db = new MVCArtistContext();
 
             Gallery galleryObject = new Gallery();
-            galleryObject.LstArtWork = new ArtWorkController().List();
-
+            ArtWorkController objAkController = new ArtWorkController();
+            galleryObject.LstArtWork = objAkController.List();
             galleryObject.Artist = new ArtistController().ShowInfo(1);
+
+            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(ArtWork.EnumPaintingType.Figures));
+            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(ArtWork.EnumPaintingType.StillLife));
+            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(ArtWork.EnumPaintingType.Landscape));
 
             TempData["ArtistArt"] = galleryObject.Artist;
 
             return View("Gallery", galleryObject);
         }
 
-        
+
 
     }
 }

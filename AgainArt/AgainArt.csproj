@@ -143,6 +143,7 @@
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\MVCArtistContext.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="Models\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Bears_24215f65-8cfc-48cb-8b24-67e83b320fac.jpg" />

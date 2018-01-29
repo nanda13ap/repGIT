@@ -19,9 +19,9 @@ namespace AgainArt.Controllers
             galleryObject.LstArtWork = objAkController.List();
             galleryObject.Artist = new ArtistController().ShowInfo(1);
 
-            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(ArtWork.EnumPaintingType.Figures));
-            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(ArtWork.EnumPaintingType.StillLife));
-            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(ArtWork.EnumPaintingType.Landscape));
+            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(Util.EnumPaintingType.Figures));
+            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(Util.EnumPaintingType.StillLife));
+            galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(Util.EnumPaintingType.Landscape));
 
             TempData["ArtistArt"] = galleryObject.Artist;
 

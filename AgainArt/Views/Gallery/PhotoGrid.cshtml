@@ -2,29 +2,33 @@
 
 
 <!-- Photo grid Category -->
-<div class="w3-row">
-    @foreach (var item in Model.LstArtWorkCategory)
-    {
-        <div class="w3-third">
-            <img src=@Url.Content(item.FileURL) style="width:100%" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingType.ToString()" />
-        </div>
-    }
+<div class="w3-content w3-padding-large w3-margin-top">
+    <div class="w3-row-padding w3-padding-16 w3-center">
+        @foreach (var item in Model.LstArtWorkCategory)
+        {
+            <div class="w3-quarter">
+                <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+                <p></p>
+            </div>
+        }
+    </div>
 </div>
 
-<div class="w3-row wchild">
-    @foreach (var item in Model.LstArtWork)
-    {
-        <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingType.ToString()" />
-    }
+<div class="w3-content w3-padding-large w3-margin-top">
+    <div class=" w3-image w3-row wchild">
+        @foreach (var item in Model.LstArtWork)
+        {
+            <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+        }
+    </div>
 </div>
-
 <!-- Photo grid -->
 @*<div class="w3-row">
         @foreach (var item in Model.LstArtWork)
         {
-            <div class="w3-third">
-                <img src=@Url.Content(item.FileURL) style="width:100%" onclick="onClick(this)" alt="@item.Description" />
-            </div>
+        <div class="w3-third">
+            <img src=@Url.Content(item.FileURL) style="width:100%" onclick="onClick(this)" alt="@item.Description" />
+        </div>
         }
     </div>*@
 

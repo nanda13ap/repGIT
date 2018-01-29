@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Net.Mime;
+using System.ComponentModel;
+using static AgainArt.Models.Util;
 
 namespace AgainArt.Models
 {
@@ -38,14 +40,18 @@ namespace AgainArt.Models
 
         public byte[] ImageData { get; set; }
 
-        public enum EnumPaintingType
-        {
-            StillLife = 1
-                , Figures = 2
-                , Landscape
-        }
+
 
         public int PaintingType { get; set; }
+
+        [NotMapped]
+        public string PaintingTypeDescription
+        {
+            get
+            {
+                return ((EnumPaintingType)(PaintingType)).GetDescription();
+            }
+        }
 
         [ForeignKey("Artista")]
         public int IdArtista { get; set; }
@@ -53,3 +59,4 @@ namespace AgainArt.Models
 
     }
 }
+

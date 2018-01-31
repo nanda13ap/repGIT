@@ -17,15 +17,6 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Deploymen
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Razor.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.Mvc.xml
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.csprojResolveAssemblyReference.cache
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.InitialCreate.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.InicialDB.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.AddingArtWork.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.AddingArtWork2.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.novaQUadro.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.insertQuadro.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.insertColumsArtist.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.insertColumnName.resources
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.changinColumn.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.initialcatalog.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.csproj.GenerateResource.Cache
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.dll

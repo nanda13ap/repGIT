@@ -14,7 +14,7 @@ namespace AgainArt.Models
             [Description("Still Life")]
             StillLife = 1
                 , Figures = 2
-                , Landscape
+                , Landscape = 3
         }
         public static string GetDescription<T>(this T enumerationValue)
     where T : struct

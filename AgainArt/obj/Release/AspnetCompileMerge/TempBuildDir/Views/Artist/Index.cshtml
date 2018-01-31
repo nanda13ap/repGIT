@@ -1,0 +1,73 @@
+﻿@model AgainArt.Models.Gallery
+
+@{
+    Layout = null;
+}
+
+Pagina de artista
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.DisplayNameFor(a => a.Artist.Name);
+        @Html.TextBoxFor(a => a.Artist.Name);
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(a => a.Artist.About);
+        @Html.TextBoxFor(a => a.Artist.About);
+    </p>
+
+    <input type="submit" name="btnCriar" value="Inserir Artista" formaction=@Url.Action("Insert","Artist") formmethod="post" class="btn btn-primary" />
+
+    <p>
+        <input type="submit" name="btnPesquisar" value="Search Artista" formaction=@Url.Action("Details","Artist") formmethod="post" class="btn btn-primary" />
+        @Html.TextBox("txtIdSearch");
+    </p>
+
+    {
+
+
+        if (Model != null && Model.Artist != null)
+        {
+            @Html.DisplayFor(model => model.Artist.Name);
+        }
+
+        @*@Html.Label(valor);*@
+
+
+    }
+
+    @*@Html.DisplayNameFor(a=>a.*@
+
+
+
+
+    @*<p>
+
+            <label for="file">Upload File:</label><input type="file" name="file" id="file" lang="en-us" />
+        </p>
+            <p>
+                @Html.TextBox("txtDescription");
+            </p>
+
+            <input type="submit" formmethod="post" formaction=@Url.Action("Add","ArtWorkController") formenctype="multipart/form-data" value="Upload File" lang="en-us" />*@
+ 
+
+
+}
+
+
+@using (Html.BeginForm("Add", "ArtWork", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Label("Description:");
+    @Html.TextBox("txtArtDescription");
+    <input type="file" name="file" />
+    <input type="submit" value="OK" />
+}
+
+@using (Html.BeginForm("List", "ArtWork", FormMethod.Post))
+{
+    <input type="submit" value="Listar Obras" />
+
+}

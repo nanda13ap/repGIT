@@ -14,6 +14,7 @@ namespace AgainArt.Controllers
             //db.Artista.Add(new Artist() { Id = 2, Nome = "Rubens", About = "Legal" });
             //db.SaveChanges();
 
+
             return View();
         }
 

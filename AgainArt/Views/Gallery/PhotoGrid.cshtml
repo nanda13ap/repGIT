@@ -4,21 +4,33 @@
 <!-- Photo grid Category -->
 <div class="w3-content w3-padding-large w3-margin-top">
     <div class="w3-row-padding w3-padding-16 w3-center">
-        @foreach (var item in Model.LstArtWorkCategory)
+        @if (Model != null && (Model.LstArtWorkCategory != null))
         {
-            <div class="w3-quarter">
-                <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
-                <p></p>
-            </div>
+            foreach (var item in Model.LstArtWorkCategory)
+            {
+                if (item != null)
+                {
+                    <div class="w3-quarter">
+                        <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+                        <p>@item.PaintingTypeDescription</p>
+                    </div>
+                }
+            }
         }
     </div>
 </div>
 
 <div class="w3-content w3-padding-large w3-margin-top">
-    <div class=" w3-image w3-row wchild">
-        @foreach (var item in Model.LstArtWork)
+    <div class="w3-image w3-row wchild">
+        @if (Model != null && (Model.LstArtWork != null))
         {
-            <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+            foreach (var item in Model.LstArtWork)
+            {
+                if (item != null)
+                {
+                    <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+                }
+            }
         }
     </div>
 </div>

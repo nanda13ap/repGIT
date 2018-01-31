@@ -30,12 +30,42 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="MVCArtistContext-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql" Enabled="False">
+            <PreSource Path="Data Source=SIBSP445CA%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\MVCArtistContext-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+          <Object Type="DbFullSql" Enabled="True">
+            <Source Path="..\..\..\..\Desktop\Grant.sql" Transacted="true" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="MVCArtistContext-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql" Enabled="False">
+            <PreSource Path="Data Source=SIBSP445CA%3bIntegrated Security=True%3bDatabase=DBAgainArt%3bInitial Catalog=DBAgainArt%3b" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\MVCArtistContext-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+          <Object Type="DbFullSql" Enabled="False" xmlns="">
+            <Source Path="..\..\..\..\Desktop\GrantArt.sql" Transacted="False" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -85,6 +115,7 @@
   <ItemGroup>
     <Folder Include="Content\ArtWorkImages\Original\" />
     <Folder Include="Content\ArtWorkImages\ThumbNail\" />
+    <Folder Include="Properties\" />
     <Folder Include="Views\Email\" />
   </ItemGroup>
   <ItemGroup>
@@ -96,45 +127,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Migrations\201801231328250_InitialCreate.cs" />
-    <Compile Include="Migrations\201801231328250_InitialCreate.Designer.cs">
-      <DependentUpon>201801231328250_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801231502258_InicialDB.cs" />
-    <Compile Include="Migrations\201801231502258_InicialDB.Designer.cs">
-      <DependentUpon>201801231502258_InicialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801241842372_AddingArtWork.cs" />
-    <Compile Include="Migrations\201801241842372_AddingArtWork.Designer.cs">
-      <DependentUpon>201801241842372_AddingArtWork.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801241956403_AddingArtWork2.cs" />
-    <Compile Include="Migrations\201801241956403_AddingArtWork2.Designer.cs">
-      <DependentUpon>201801241956403_AddingArtWork2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801252156598_novaQUadro.cs" />
-    <Compile Include="Migrations\201801252156598_novaQUadro.Designer.cs">
-      <DependentUpon>201801252156598_novaQUadro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801261432507_insertQuadro.cs" />
-    <Compile Include="Migrations\201801261432507_insertQuadro.Designer.cs">
-      <DependentUpon>201801261432507_insertQuadro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801272252312_insertColumsArtist.cs" />
-    <Compile Include="Migrations\201801272252312_insertColumsArtist.Designer.cs">
-      <DependentUpon>201801272252312_insertColumsArtist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801272255011_insertColumnName.cs" />
-    <Compile Include="Migrations\201801272255011_insertColumnName.Designer.cs">
-      <DependentUpon>201801272255011_insertColumnName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801272348155_changinColumn.cs" />
-    <Compile Include="Migrations\201801272348155_changinColumn.Designer.cs">
-      <DependentUpon>201801272348155_changinColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801290006542_addCOl.cs" />
-    <Compile Include="Migrations\201801290006542_addCOl.Designer.cs">
-      <DependentUpon>201801290006542_addCOl.cs</DependentUpon>
+    <Compile Include="Migrations\201801301833118_initialcatalog.cs" />
+    <Compile Include="Migrations\201801301833118_initialcatalog.Designer.cs">
+      <DependentUpon>201801301833118_initialcatalog.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artist.cs" />
@@ -146,7 +141,6 @@
     <Compile Include="Models\Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Bears_24215f65-8cfc-48cb-8b24-67e83b320fac.jpg" />
     <Content Include="Images\Bears.jpg" />
     <Content Include="Images\boy.jpg" />
     <Content Include="Images\girl.jpg" />
@@ -154,7 +148,8 @@
     <Content Include="Images\girl_train.jpg" />
     <Content Include="Images\man_bench.jpg" />
     <Content Include="Images\natureboy.jpg" />
-    <None Include="ProfileFernanda.pubxml" />
+    <None Include="WebDeployProfile.pubxml" />
+    <None Include="FileSystemDeploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\PatrickErika.jpg" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -168,9 +163,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Views\Artist\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -179,6 +171,23 @@
     <Content Include="Views\Gallery\AboutSection.cshtml" />
     <Content Include="Views\Gallery\ContactSection.cshtml" />
     <Content Include="Views\Gallery\Gallery.cshtml" />
+    <None Include="Views\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Views\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <!--<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
@@ -195,42 +204,15 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801231328250_InitialCreate.resx">
-      <DependentUpon>201801231328250_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801231502258_InicialDB.resx">
-      <DependentUpon>201801231502258_InicialDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801241842372_AddingArtWork.resx">
-      <DependentUpon>201801241842372_AddingArtWork.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801241956403_AddingArtWork2.resx">
-      <DependentUpon>201801241956403_AddingArtWork2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801252156598_novaQUadro.resx">
-      <DependentUpon>201801252156598_novaQUadro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801261432507_insertQuadro.resx">
-      <DependentUpon>201801261432507_insertQuadro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801272252312_insertColumsArtist.resx">
-      <DependentUpon>201801272252312_insertColumsArtist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801272255011_insertColumnName.resx">
-      <DependentUpon>201801272255011_insertColumnName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801272348155_changinColumn.resx">
-      <DependentUpon>201801272348155_changinColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801290006542_addCOl.resx">
-      <DependentUpon>201801290006542_addCOl.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\ArtWork\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801301833118_initialcatalog.resx">
+      <DependentUpon>201801301833118_initialcatalog.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

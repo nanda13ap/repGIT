@@ -1,0 +1,49 @@
+﻿@model AgainArt.Models.Gallery
+
+
+<!-- Photo grid Category -->
+<div class="w3-content w3-padding-large w3-margin-top">
+    <div class="w3-row-padding w3-padding-16 w3-center">
+        @if (Model != null)
+        {
+            foreach (var item in Model.LstArtWorkCategory)
+            {
+                <div class="w3-quarter">
+                    <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+                    <p>@item.PaintingTypeDescription</p>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<div class="w3-content w3-padding-large w3-margin-top">
+    <div class="w3-image w3-row wchild">
+        @if (Model != null)
+        {
+            foreach (var item in Model.LstArtWork)
+            {
+                <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+            }
+        }
+    </div>
+</div>
+<!-- Photo grid -->
+@*<div class="w3-row">
+        @foreach (var item in Model.LstArtWork)
+        {
+        <div class="w3-third">
+            <img src=@Url.Content(item.FileURL) style="width:100%" onclick="onClick(this)" alt="@item.Description" />
+        </div>
+        }
+    </div>*@
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+    </div>
+</div>

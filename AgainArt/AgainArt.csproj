@@ -141,6 +141,7 @@
     <Compile Include="Models\Util.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\personalData.css" />
     <Content Include="Images\Bears.jpg" />
     <Content Include="Images\boy.jpg" />
     <Content Include="Images\girl.jpg" />
@@ -148,6 +149,7 @@
     <Content Include="Images\girl_train.jpg" />
     <Content Include="Images\man_bench.jpg" />
     <Content Include="Images\natureboy.jpg" />
+    <Content Include="Views\Artist\PersonalData.cshtml" />
     <None Include="WebDeployProfile.pubxml" />
     <None Include="FileSystemDeploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

@@ -10,12 +10,10 @@ namespace AgainArt.Controllers
     {
         public ActionResult Index()
         {
-            //MVCArtistContext db = new MVCArtistContext();
-            //db.Artista.Add(new Artist() { Id = 2, Nome = "Rubens", About = "Legal" });
-            //db.SaveChanges();
+            MVCArtistContext db = new MVCArtistContext();
 
 
-            return View();
+            return View("PersonalData", db.Artista.FirstOrDefault());
         }
 
         [HttpPost]
@@ -45,16 +43,21 @@ namespace AgainArt.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult ManageInfo(Artist objArtista)
         {
-            try
-            {
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            MVCArtistContext db = new MVCArtistContext();
+            Artist dbArtista = db.Artista.FirstOrDefault(a => a.Id == objArtista.Id);
+
+            dbArtista.About = objArtista.About;
+            dbArtista.Email = objArtista.Email;
+            dbArtista.Name = objArtista.Name;
+            dbArtista.LastName = objArtista.LastName;
+
+            db.Entry<Artist>(dbArtista).State = System.Data.Entity.EntityState.Modified;
+
+            db.SaveChanges();
+
+            return View("PersonalData");
         }
 
         public ActionResult Edit(int id)

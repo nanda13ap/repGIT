@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="MVCArtistContext-Web.config Connection String" description="MVCArtistContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=SIBSP445CA;Database=DBAgainArt;Initial Catalog=DBAgainArt;Integrated Security=SSPI;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\rodrfern\\Source\\Repos\\repGIT\\AgainArt\\obj\\Release\\Package\\PackageTmp\\web\.config$" match="/configuration/connectionStrings/add[@name='MVCArtistContext']/@connectionString" />
-  </parameter>
-</parameters>

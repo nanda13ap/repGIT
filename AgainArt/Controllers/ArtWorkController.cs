@@ -100,10 +100,86 @@ namespace AgainArt.Controllers
         }
 
 
-        public ActionResult Add()
+        public ActionResult AddArt(HttpPostedFileBase file, ArtWork objArt)
         {
+            //var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+            //if (ModelState.IsValid)
+            //{
+                if (file != null)
+                {
+                    string savedFileName = string.Empty;
+                    string savedThumbFile = string.Empty;
+
+                    try
+                    {
+                        ArtWork objArtWork = new ArtWork();
+                        //objArtWork.FileURL = file.FileName;
+                        objArtWork.OriginalName = file.FileName;
+                        objArtWork.IdArtista = 1;// na mao o codigo do artista
+                        objArtWork.GeneratedName = Path.GetFileNameWithoutExtension(objArtWork.OriginalName) + "_" + Guid.NewGuid() + Path.GetExtension(objArtWork.OriginalName);
+                        objArtWork.ImageData = new byte[file.ContentLength];
+                        objArtWork.Description = objArt.Description;
+                        objArtWork.PaintingEnum = objArt.PaintingEnum;
+                        objArtWork.PaintingType = (int)objArt.PaintingEnum;
+                        objArtWork.ContentType = file.ContentType;
+
+
+
+                        //Save image to file
+                        //var filename = image.FileName;
+                        var filePathOriginal = Server.MapPath(Url.Content("~/Content/ArtWorkImages/Original"));
+                        var filePathThumbnail = Server.MapPath(Url.Content("~/Content/ArtWorkImages/Thumbnail"));
+
+                        savedFileName = Path.Combine(filePathOriginal, objArtWork.GeneratedName);
+                        savedThumbFile = Path.Combine(filePathThumbnail, objArtWork.GeneratedName);
+
+                        file.SaveAs(savedFileName);
+                        objArtWork.FileURL = String.Format("~/Content/ArtWorkImages/Original/{0}", objArtWork.GeneratedName);
+
+
+
+                        //Read image back from file and create thumbnail from it
+                        var imageFile = savedFileName; //Path.Combine(Server.MapPath("~/Content/ArtWorkImages/Original"), objArtWork.GeneratedName);
+                        using (var srcImage = Image.FromFile(imageFile))
+                        using (var newImage = new Bitmap(100, 100))
+                        using (var graphics = Graphics.FromImage(newImage))
+                        using (var stream = new MemoryStream())
+                        {
+                            graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                            graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                            graphics.DrawImage(srcImage, new Rectangle(0, 0, 100, 100));
+                            newImage.Save(stream, ImageFormat.Png);
+                            objArtWork.ThumbNailURL = String.Format("~/Content/ArtWorkImages/ThumbNail/{0}", objArtWork.GeneratedName);
+                            //HttpPostedFileBase oi = newImage;
+                            newImage.Save(savedThumbFile);
+                            //var thumbNew = File(stream.ToArray(), "image/png");
+
+                            //artwork.ArtworkThumbnail = thumbNew.FileContents;
+
+
+                        }
+
+                        MVCArtistContext db = new MVCArtistContext();
+                        objArtWork.Artista = db.Artista.FirstOrDefault(a => a.Id == 1);// VER NO SERVIDOR SE ELE CONSEGUE PESQUISAR O ARTISTA = 1
+                        //////E NAO SEI MAIS
+                        db.ArtWork.Add(objArtWork);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message + " " + ex.Source + "" + ex.StackTrace + String.Format(" Caminho Original:{0} e caminho ThumbNail {1} ", savedFileName, savedThumbFile));
+
+
+                    }
+                }
+            //}
+
             return View("Index");
+
         }
+
 
         public ActionResult List(ArtWork objSearch = null)
         {
@@ -141,6 +217,11 @@ namespace AgainArt.Controllers
             objArtWork = db.ArtWork.FirstOrDefault(a => a.PaintingType == ptype);
 
             return objArtWork;
+        }
+
+        public ActionResult IncludeArt()
+        {
+            return View("IncludeArt"); // FAZER DROP DOWN LIST COM PAINTING TYPE FIGURES
         }
 
     }

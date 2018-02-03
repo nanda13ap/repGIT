@@ -53,6 +53,13 @@ namespace AgainArt.Models
             }
         }
 
+        [NotMapped]
+        public EnumPaintingType PaintingEnum
+        {
+            get;set;
+        }
+
+
         [ForeignKey("Artista")]
         public int IdArtista { get; set; }
         public virtual Artist Artista { get; set; }

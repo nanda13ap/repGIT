@@ -150,6 +150,9 @@
     <Content Include="Images\man_bench.jpg" />
     <Content Include="Images\natureboy.jpg" />
     <Content Include="Views\Artist\PersonalData.cshtml" />
+    <Content Include="Views\ArtWork\RemoveArt.cshtml" />
+    <Content Include="Views\ArtWork\IncludeArt.cshtml" />
+    <Content Include="Views\ArtWork\EditArt.cshtml" />
     <None Include="WebDeployProfile.pubxml" />
     <None Include="FileSystemDeploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

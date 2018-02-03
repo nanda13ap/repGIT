@@ -141,6 +141,7 @@
     <Compile Include="Models\Util.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\generalInput.css" />
     <Content Include="Css\personalData.css" />
     <Content Include="Images\Bears.jpg" />
     <Content Include="Images\boy.jpg" />

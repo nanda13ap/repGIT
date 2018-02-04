@@ -44,6 +44,7 @@ namespace AgainArt.Models
 
 
         [Required]
+        [StringLength(10000, MinimumLength = 3, ErrorMessage = "Your message can be from 5 to 10000 characters.")]
         public string About
         {
             get;
@@ -51,6 +52,7 @@ namespace AgainArt.Models
 
         }
 
+        [Required, EmailAddress]
         public string Email
         {
             get;

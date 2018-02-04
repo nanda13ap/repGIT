@@ -10,13 +10,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AgainArt.dll">
-      <publishTime>01/31/2018 20:36:38</publishTime>
+      <publishTime>02/03/2018 18:53:56</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>01/31/2018 20:36:45</publishTime>
+      <publishTime>02/03/2018 18:54:04</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>01/31/2018 20:36:44</publishTime>
+      <publishTime>02/03/2018 18:54:04</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>01/22/2018 17:49:12</publishTime>
@@ -47,6 +47,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/Bears_24215f65-8cfc-48cb-8b24-67e83b320fac.jpg">
       <publishTime>01/28/2018 18:51:52</publishTime>
+    </File>
+    <File Include="Css/generalInput.css">
+      <publishTime>02/03/2018 12:45:19</publishTime>
+    </File>
+    <File Include="Css/personalData.css">
+      <publishTime>01/31/2018 21:05:40</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>01/22/2018 17:47:20</publishTime>
@@ -79,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/26/2018 12:39:13</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>01/31/2018 20:36:41</publishTime>
+      <publishTime>02/03/2018 18:53:59</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>01/26/2018 12:39:09</publishTime>
@@ -105,20 +111,38 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Artist/Index.cshtml">
       <publishTime>01/27/2018 21:18:52</publishTime>
     </File>
+    <File Include="Views/Artist/PersonalData.cshtml">
+      <publishTime>02/03/2018 16:05:30</publishTime>
+    </File>
+    <File Include="Views/ArtWork/EditArt.cshtml">
+      <publishTime>02/01/2018 23:42:48</publishTime>
+    </File>
+    <File Include="Views/ArtWork/IncludeArt.cshtml">
+      <publishTime>02/03/2018 17:55:28</publishTime>
+    </File>
     <File Include="Views/ArtWork/Index.cshtml">
       <publishTime>01/27/2018 19:58:59</publishTime>
+    </File>
+    <File Include="Views/ArtWork/RemoveArt.cshtml">
+      <publishTime>02/01/2018 23:39:26</publishTime>
+    </File>
+    <File Include="Views/ErrorHandler/Error.cshtml">
+      <publishTime>02/03/2018 17:41:16</publishTime>
     </File>
     <File Include="Views/Gallery/AboutSection.cshtml">
       <publishTime>01/28/2018 21:28:05</publishTime>
     </File>
     <File Include="Views/Gallery/ContactSection.cshtml">
-      <publishTime>01/28/2018 21:57:45</publishTime>
+      <publishTime>02/03/2018 18:24:18</publishTime>
     </File>
     <File Include="Views/Gallery/Gallery.cshtml">
       <publishTime>01/27/2018 20:40:29</publishTime>
     </File>
     <File Include="Views/Gallery/PhotoGrid.cshtml">
-      <publishTime>01/31/2018 20:13:28</publishTime>
+      <publishTime>02/03/2018 18:08:03</publishTime>
+    </File>
+    <File Include="Views/Gallery/View.cshtml">
+      <publishTime>02/03/2018 18:22:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>01/23/2018 19:40:20</publishTime>
@@ -127,19 +151,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2018 17:47:20</publishTime>
     </File>
     <File Include="Views/Shared/MasterPage.cshtml">
-      <publishTime>01/28/2018 23:35:59</publishTime>
+      <publishTime>02/03/2018 15:57:21</publishTime>
+    </File>
+    <File Include="Views/Shared/_Alerts.cshtml">
+      <publishTime>02/03/2018 15:59:54</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>01/27/2018 21:59:09</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>01/31/2018 20:36:39</publishTime>
+      <publishTime>02/03/2018 18:53:57</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>01/22/2018 17:47:20</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/31/2018 20:36:39</publishTime>
+      <publishTime>02/03/2018 18:53:57</publishTime>
     </File>
   </ItemGroup>
 </Project>

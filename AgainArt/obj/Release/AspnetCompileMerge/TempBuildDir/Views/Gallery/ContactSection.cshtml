@@ -1,5 +1,6 @@
 ﻿@model AgainArt.Models.Gallery
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Contact section -->
 <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
     <div class="w3-content" style="max-width:600px">
@@ -10,19 +11,26 @@
             @using (Html.BeginForm("SendEmail", "Email", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                 <div class="w3-section">
                     @Html.DisplayNameFor(model => model.Email.Name)
                     @Html.TextBoxFor(model => model.Email.Name, new { @class = "w3-input w3-border", @required = "required" })
-
+                    @Html.ValidationMessageFor(model => model.Email.Name, "", new { @class = "text-danger" })
+                    
                 </div>
                 <div class="w3-section">
                     @Html.DisplayNameFor(model => model.Email.From)
                     @Html.TextBoxFor(model => model.Email.From, new { @class = "w3-input w3-border", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Email.From, "", new { @class = "text-danger" })
+                    
                 </div>
                 <div class="w3-section">
                     @Html.DisplayNameFor(model => model.Email.Body)
-                    @Html.TextBoxFor(model => model.Email.Body, new { @class = "w3-input w3-border", @required = "required" })
+                    @Html.TextAreaFor(model => model.Email.Body, new { @class = "w3-input w3-border", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Email.Body, "", new { @class = "text-danger" })
+
+
                 </div>
                 @Html.HiddenFor(model => model.Email.Subject, new { @value = "Message from your Website: Paintings" })
 

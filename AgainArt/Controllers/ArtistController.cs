@@ -6,12 +6,11 @@ using System.Web.Mvc;
 using AgainArt.Models;
 namespace AgainArt.Controllers
 {
-    public class ArtistController : Controller
+    public class ArtistController : BaseAlertController
     {
         public ActionResult Index()
         {
             MVCArtistContext db = new MVCArtistContext();
-
 
             return View("PersonalData", db.Artista.FirstOrDefault());
         }
@@ -45,17 +44,25 @@ namespace AgainArt.Controllers
         [HttpPost]
         public ActionResult ManageInfo(Artist objArtista)
         {
-            MVCArtistContext db = new MVCArtistContext();
-            Artist dbArtista = db.Artista.FirstOrDefault(a => a.Id == objArtista.Id);
+            try
+            {
+                MVCArtistContext db = new MVCArtistContext();
+                Artist dbArtista = db.Artista.FirstOrDefault(a => a.Id == objArtista.Id);
 
-            dbArtista.About = objArtista.About;
-            dbArtista.Email = objArtista.Email;
-            dbArtista.Name = objArtista.Name;
-            dbArtista.LastName = objArtista.LastName;
+                dbArtista.About = objArtista.About;
+                dbArtista.Email = objArtista.Email;
+                dbArtista.Name = objArtista.Name;
+                dbArtista.LastName = objArtista.LastName;
 
-            db.Entry<Artist>(dbArtista).State = System.Data.Entity.EntityState.Modified;
+                db.Entry<Artist>(dbArtista).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
 
-            db.SaveChanges();
+                Success(string.Format("The information was successfully saved in the database."), true);
+            }
+            catch
+            {
+                Danger("It Looks like something went wrong. Please try again later.");
+            }
 
             return View("PersonalData");
         }

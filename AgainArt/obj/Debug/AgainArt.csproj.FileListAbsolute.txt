@@ -1,3 +1,4 @@
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\AgainArt.dll.config
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\AgainArt.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\AgainArt.pdb
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\EntityFramework.dll
@@ -18,8 +19,8 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Razor.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.Mvc.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.initialcatalog.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.requiredfields.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csproj.GenerateResource.Cache
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.pdb
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\AgainArt.dll.config
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csprojResolveAssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿@model AgainArt.Models.ArtWork
+﻿@model IEnumerable<AgainArt.Models.ArtWork>
+@using AgainArt.Models;
 
 @{
     ViewBag.Title = "View1";
@@ -7,99 +8,73 @@
 
 <h2>View1</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ArtWork</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FileURL)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FileURL)
-        </dd>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ThumbNailURL)
-        </dt>
+<div class="w3-content w3-padding-large w3-margin-top">
+    <table class="table">
+        <tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ThumbNailURL)
-        </dd>
+            <th>
+                <input type="checkbox" id="ckbAll" />
+            </th>
+            <th></th>
+            <th>
+                Painting Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Classification
+            </th>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.OriginalName)
-        </dt>
+            <th></th>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.OriginalName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GeneratedName)
-        </dt>
+        @foreach (var item in Model)
+        {
 
-        <dd>
-            @Html.DisplayFor(model => model.GeneratedName)
-        </dd>
+            <tr>
+                <td>
+                    <input type="checkbox" id="ckbEach" />
+                </td>
+                <td>
+                    <img src=@Url.Content(item.ThumbNailURL) alt="@item.Description" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginalName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description);
+                </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaintingTypeDescription)
+                </td>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                </td>
+            </tr>
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ContentType)
-        </dt>
+    </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.ContentType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContentLength)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContentLength)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PaintingType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PaintingType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PaintingTypeDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PaintingTypeDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IdArtista)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdArtista)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+

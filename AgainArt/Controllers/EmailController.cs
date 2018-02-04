@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace AgainArt.Controllers
 {
-    public class EmailController : Controller
+    public class EmailController : BaseAlertController
     {
         // GET: Email
         public ActionResult Index()
@@ -22,25 +22,35 @@ namespace AgainArt.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SendEmail(Gallery gallery)
         {
-            Email objEmailContact = gallery.Email;
+            try
 
-            SmtpClient client = new SmtpClient();
+            {
+                Email objEmailContact = gallery.Email;
 
-            MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(ConfigurationManager.AppSettings["username"], objEmailContact.Name);
-            //new MailAddress(objEmailContact.From);
-            mailMessage.To.Add(new MailAddress(ConfigurationManager.AppSettings["username"], objEmailContact.Name));
-            mailMessage.Subject = "Message from your Website: Paintings";
-            mailMessage.Body = string.Format("<h2>You have just received a message from your website.</h2><br><br> <b>Name:</b> {0}<br><b>Email:</b> {1}<br><b>Message: </b> {2} ", objEmailContact.Name, objEmailContact.From, objEmailContact.Body);
-            mailMessage.Sender = new MailAddress(objEmailContact.From, objEmailContact.Name);
-            mailMessage.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient();
 
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.EnableSsl = true;
-            client.UseDefaultCredentials = false;
-            client.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["username"], ConfigurationManager.AppSettings["password"]);
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress(ConfigurationManager.AppSettings["username"], objEmailContact.Name);
+                //new MailAddress(objEmailContact.From);
+                mailMessage.To.Add(new MailAddress(ConfigurationManager.AppSettings["username"], objEmailContact.Name));
+                mailMessage.Subject = "Message from your Website: Paintings";
+                mailMessage.Body = string.Format("<h2>You have just received a message from your website.</h2><br><br> <b>Name:</b> {0}<br><b>Email:</b> {1}<br><b>Message: </b> {2} ", objEmailContact.Name, objEmailContact.From, objEmailContact.Body);
+                mailMessage.Sender = new MailAddress(objEmailContact.From, objEmailContact.Name);
+                mailMessage.IsBodyHtml = true;
 
-            client.Send(mailMessage);
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.EnableSsl = true;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["username"], ConfigurationManager.AppSettings["password"]);
+
+                client.Send(mailMessage);
+
+                Success(string.Format("The information was successfully saved in the database."), true);
+            }
+            catch
+            {
+                Danger("It looks like something went wrong. Please try again later.");
+            }
 
             return RedirectToAction("Index", "Gallery");
 

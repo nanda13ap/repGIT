@@ -20,3 +20,5 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.Mvc.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.initialcatalog.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.csproj.GenerateResource.Cache
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.dll
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.Migrations.requiredfields.resources
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Release\AgainArt.csprojResolveAssemblyReference.cache

@@ -32,6 +32,7 @@ namespace AgainArt.Models
         public string GeneratedName { get; set; }
 
         [Required]
+        [StringLength(10000, MinimumLength = 3, ErrorMessage = "Your message can be from 5 to 10000 characters.")]
         public string Description { get; set; }
 
         public string ContentType { get; set; }
@@ -56,7 +57,7 @@ namespace AgainArt.Models
         [NotMapped]
         public EnumPaintingType PaintingEnum
         {
-            get;set;
+            get; set;
         }
 
 

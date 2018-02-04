@@ -7,6 +7,19 @@ namespace AgainArt.Models
 {
     public class Gallery
     {
+        private Alert _alert;
+
+        public Alert Alert
+        {
+            get {
+                if (_alert == null)
+                {
+                    _alert = new Alert();
+                }
+                return _alert; }
+            set { _alert = value; }
+        }
+
         private Artist _artist;
 
         public Artist Artist

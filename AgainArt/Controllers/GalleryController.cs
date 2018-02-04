@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace AgainArt.Controllers
 {
-    public class GalleryController : Controller
+    public class GalleryController : BaseAlertController
     {
         // GET: Gallery
         public ActionResult Index()

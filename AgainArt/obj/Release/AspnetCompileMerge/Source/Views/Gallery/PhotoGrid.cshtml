@@ -11,7 +11,7 @@
                 if (item != null)
                 {
                     <div class="w3-quarter">
-                        <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+                        <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingTypeDescription.Replace(" ","")" />
                         <p>@item.PaintingTypeDescription</p>
                     </div>
                 }
@@ -28,7 +28,7 @@
             {
                 if (item != null)
                 {
-                    <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingTypeDescription" />
+                    <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingTypeDescription.Replace(" ","")" />
                 }
             }
         }

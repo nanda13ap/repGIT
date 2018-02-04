@@ -19,7 +19,16 @@ namespace AgainArt.Controllers
         // GET: ArtWork
         public ActionResult Index()
         {
-            return View();
+            TempData["ArtistArt"] = new ArtistController().ShowInfo(1);
+            return RedirectToAction("RemoveArt");
+        }
+
+        private static ArtWorkController GetArtistInfo(Gallery galleryObject)
+        {
+            ArtWorkController objAkController = new ArtWorkController();
+            galleryObject.LstArtWork = objAkController.List();
+            galleryObject.Artist = new ArtistController().ShowInfo(1);
+            return objAkController;
         }
 
         [HttpPost]
@@ -247,11 +256,13 @@ namespace AgainArt.Controllers
 
         public ActionResult IncludeArt()
         {
+            TempData["ArtistArt"] = new ArtistController().ShowInfo(1);
             return View("IncludeArt"); // FAZER DROP DOWN LIST COM PAINTING TYPE FIGURES
         }
 
         public ActionResult RemoveArt()
         {
+            TempData["ArtistArt"] = new ArtistController().ShowInfo(1);
             return View("RemoveArt", List());
 
         }

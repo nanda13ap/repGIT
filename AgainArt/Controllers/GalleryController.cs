@@ -15,9 +15,7 @@ namespace AgainArt.Controllers
             MVCArtistContext db = new MVCArtistContext();
 
             Gallery galleryObject = new Gallery();
-            ArtWorkController objAkController = new ArtWorkController();
-            galleryObject.LstArtWork = objAkController.List();
-            galleryObject.Artist = new ArtistController().ShowInfo(1);
+            ArtWorkController objAkController = GetArtistInfo(galleryObject);
 
             galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(Util.EnumPaintingType.Figures));
             galleryObject.LstArtWorkCategory.Add(objAkController.SearchForCategory(Util.EnumPaintingType.StillLife));
@@ -28,7 +26,12 @@ namespace AgainArt.Controllers
             return View("Gallery", galleryObject);
         }
 
-
-
+        private static ArtWorkController GetArtistInfo(Gallery galleryObject)
+        {
+            ArtWorkController objAkController = new ArtWorkController();
+            galleryObject.LstArtWork = objAkController.List();
+            galleryObject.Artist = new ArtistController().ShowInfo(1);
+            return objAkController;
+        }
     }
 }

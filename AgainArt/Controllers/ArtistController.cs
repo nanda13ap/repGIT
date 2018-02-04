@@ -10,9 +10,10 @@ namespace AgainArt.Controllers
     {
         public ActionResult Index()
         {
-            MVCArtistContext db = new MVCArtistContext();
+            Artist objArtist = new ArtistController().ShowInfo(1);
+            TempData["ArtistArt"] = objArtist;
 
-            return View("PersonalData", db.Artista.FirstOrDefault());
+            return View("PersonalData", objArtist);
         }
 
         public ActionResult PersonalData()
@@ -69,7 +70,7 @@ namespace AgainArt.Controllers
                 Danger("It Looks like something went wrong. Please try again later.");
             }
 
-            return View("PersonalData");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)

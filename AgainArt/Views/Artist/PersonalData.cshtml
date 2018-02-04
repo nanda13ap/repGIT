@@ -10,13 +10,15 @@
 
 <div class="w3-content w3-padding-large w3-margin-top">
     <h2>Personal Data</h2>
+    <hr />
+    <hr />
+    <hr />
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.Id)
 
@@ -73,7 +75,7 @@
         <hr />
         <hr />
         <h4>
-            @Html.ActionLink("Manage my artwork", "RemoveArt", "ArtWork")
+            @Html.ActionLink("Manage my artwork", "Index", "ArtWork")
         </h4>
     </div>
     <p>

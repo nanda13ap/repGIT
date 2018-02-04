@@ -6,8 +6,6 @@
 }
 
 <link href="@Url.Content("~/Css/Personaldata.css")" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 <div class="w3-content w3-padding-large w3-margin-top">
@@ -71,7 +69,12 @@
         </div>
     }
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        <hr />
+        <hr />
+        <hr />
+        <h4>
+            @Html.ActionLink("Manage my artwork", "RemoveArt", "ArtWork")
+        </h4>
     </div>
     <p>
 

@@ -17,7 +17,6 @@
 
         <div class="form-horizontal">
             <h2>Add your paintings here</h2>
-            <h4></h4>
             <hr />
             <hr />
 
@@ -75,9 +74,14 @@
 
     }
     <div>
-        @Html.ActionLink("Back to List", "Gallery", "Index")
+        <hr />
+        <hr />
+        <hr />
+        <h4>
+            @Html.ActionLink("Manage my artwork", "RemoveArt", "ArtWork") |
+            @Html.ActionLink("Manage my profile", "Index", "Artist")
+        </h4>
     </div>
-
 
     <hr />
     <hr />

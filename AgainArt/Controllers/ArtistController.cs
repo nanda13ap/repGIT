@@ -15,6 +15,11 @@ namespace AgainArt.Controllers
             return View("PersonalData", db.Artista.FirstOrDefault());
         }
 
+        public ActionResult PersonalData()
+        {
+            return View("Index");
+        }
+
         [HttpPost]
         public ActionResult Details(int txtIdSearch)
         {

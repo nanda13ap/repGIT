@@ -6,75 +6,80 @@
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
-<h2>View1</h2>
-
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
 <div class="w3-content w3-padding-large w3-margin-top">
-    <table class="table">
-        <tr>
-
-            <th>
-                <input type="checkbox" id="ckbAll" />
-            </th>
-            <th></th>
-            <th>
-                Painting Name
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Classification
-            </th>
-
-            <th></th>
-        </tr>
-
-
-        @foreach (var item in Model)
-        {
-
+    <h1>Manage Artwork</h1>
+    <hr />
+    <hr />
+    <hr />
+    <h4>
+        @Html.ActionLink("New Painting", "IncludeArt", "Artwork")
+    </h4>
+    <hr />
+    <table class="table table-striped table-hover table-responsive " style="background-color:#f9f9f9">
+        <thead>
             <tr>
-                <td>
-                    <input type="checkbox" id="ckbEach" />
-                </td>
-                <td>
-                    <img src=@Url.Content(item.ThumbNailURL) alt="@item.Description" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OriginalName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description);
-                </td>
+                <th>
+                    <input type="checkbox" id="ckbAll" />
+                </th>
+                <th></th>
+                <th>
+                    PAINTING NAME
+                </th>
+                <th>
+                    DESCRIPTION
+                </th>
+                <th>
+                    CLASSIFICATION
+                </th>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.PaintingTypeDescription)
-                </td>
-
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
-                </td>
+                <th></th>
             </tr>
-        }
+        <thead />
 
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        <input type="checkbox" id="ckbEach" />
+                    </td>
+                    <td>
+                        <img src=@Url.Content(item.ThumbNailURL) alt="@item.Description" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description);
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaintingTypeDescription)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
+        <input type="submit" value="Delete" class="btn btn-primary" />
+        <h4>
+            @Html.ActionLink("New Painting", "IncludeArt", "Artwork") | 
+            @Html.ActionLink("Manage my profile", "Index", "Artist")
+        </h4>
+
+    }
 </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-}
 

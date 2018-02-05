@@ -264,13 +264,38 @@ namespace AgainArt.Controllers
         {
             TempData["ArtistArt"] = new ArtistController().ShowInfo(1);
             return View("RemoveArt", List());
-
         }
 
         [HttpPost]
         public ActionResult RemoveArt(ArtWork objArt)
         {
             return View("RemoveArt", new Gallery() { LstArtWork = List() });
+        }
+
+        public ActionResult EditArt(int? id)
+        {
+            TempData["ArtistArt"] = new ArtistController().ShowInfo(1);
+            MVCArtistContext db = new MVCArtistContext();
+
+            return View("EditArt", db.ArtWork.FirstOrDefault(a => a.Id == id));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(ArtWork objArtWork)
+        {
+            try
+            {
+                MVCArtistContext db = new MVCArtistContext();
+                db.Entry<ArtWork>(objArtWork).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                Success(string.Format("The information was successfully saved in the database."), true);
+
+            }
+            catch
+            {
+                Danger("It Looks like something went wrong. Please try again later.");
+            }
+            return RedirectToAction("EditArt", new { id = objArtWork.Id });
         }
 
     }

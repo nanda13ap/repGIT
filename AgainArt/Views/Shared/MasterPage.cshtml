@@ -115,7 +115,6 @@
         }
 
         function getImages(element) {
-            //alert($(element).attr('class'));
             $(".wchild img" + "." + $(element).attr('class')).show();
 
             $(".wchild img").not("." + $(element).attr('class')).hide();

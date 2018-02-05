@@ -166,8 +166,6 @@
     <Content Include="Views\ErrorHandler\Error.cshtml" />
     <Content Include="Views\Gallery\View.cshtml" />
     <None Include="FTPProductionDeploy.pubxml" />
-    <None Include="patrickkluga.com - Web Deploy %282%29.pubxml" />
-    <None Include="patrickkluga.com - Web Deploy %283%29.pubxml" />
     <None Include="patrickkluga.com - Web Deploy.pubxml" />
     <Content Include="Views\ArtWork\View.cshtml" />
     <None Include="WebDeployProfile.pubxml" />

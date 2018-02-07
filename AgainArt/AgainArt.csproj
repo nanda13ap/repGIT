@@ -142,6 +142,7 @@
     <Compile Include="Models\Alert.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\ArtWork.cs" />
+    <Compile Include="Models\Extensions.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\MVCArtistContext.cs" />
@@ -158,6 +159,7 @@
     <Content Include="Images\girl_train.jpg" />
     <Content Include="Images\man_bench.jpg" />
     <Content Include="Images\natureboy.jpg" />
+    <Content Include="Scripts\RemoveArtPaget.js" />
     <Content Include="Views\Artist\PersonalData.cshtml" />
     <Content Include="Views\ArtWork\RemoveArt.cshtml" />
     <Content Include="Views\ArtWork\IncludeArt.cshtml" />

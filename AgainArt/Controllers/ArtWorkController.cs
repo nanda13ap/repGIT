@@ -129,7 +129,7 @@ namespace AgainArt.Controllers
                     objArtWork.GeneratedName = Path.GetFileNameWithoutExtension(objArtWork.OriginalName) + "_" + Guid.NewGuid() + Path.GetExtension(objArtWork.OriginalName);
                     objArtWork.ImageData = new byte[file.ContentLength];
                     objArtWork.Description = objArt.Description;
-                    objArtWork.PaintingEnum = objArt.PaintingEnum;
+                    //objArtWork.PaintingEnum = objArt.PaintingEnum; comentei fer
                     objArtWork.PaintingType = (int)objArt.PaintingEnum;
                     objArtWork.ContentType = file.ContentType;
 
@@ -269,7 +269,14 @@ namespace AgainArt.Controllers
         [HttpPost]
         public ActionResult RemoveArt(ArtWork objArt)
         {
+
             return View("RemoveArt", new Gallery() { LstArtWork = List() });
+        }
+
+        [HttpPost]
+        public ActionResult Delete(string[] ids)
+        {
+            return RedirectToAction("RemoveArt");
         }
 
         public ActionResult EditArt(int? id)

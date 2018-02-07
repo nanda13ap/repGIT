@@ -44,21 +44,29 @@ namespace AgainArt.Models
 
 
 
+        [Display(Name = "Painting Type")]
         public int PaintingType { get; set; }
 
-        [NotMapped]
-        public string PaintingTypeDescription
-        {
-            get
-            {
-                return ((EnumPaintingType)(PaintingType)).GetDescription();
-            }
-        }
+        //[NotMapped]
+        //public string PaintingTypeDescription
+        //{
+        //    get
+        //    {
+        //        return ((EnumPaintingType)(PaintingType)).GetDescription();
+        //    }
+        //}
 
         [NotMapped]
         public EnumPaintingType PaintingEnum
         {
-            get; set;
+            get
+            {
+                return (EnumPaintingType)(PaintingType);
+            }
+            set
+            {
+                PaintingType = (int)value;
+            }
         }
 
 

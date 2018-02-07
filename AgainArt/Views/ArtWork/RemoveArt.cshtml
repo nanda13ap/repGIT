@@ -6,6 +6,7 @@
     Layout = "~/Views/Shared/MasterPage.cshtml";
 }
 
+
 <div class="w3-content w3-padding-large w3-margin-top">
     <h1>Manage Artwork</h1>
     <hr />
@@ -43,7 +44,7 @@
 
                 <tr>
                     <td>
-                        <input type="checkbox" id="ckbEach" class="checkbox" />
+                        <input type="checkbox" id="ckbEach" class="checkbox" value="@item.Id" />
                     </td>
                     <td>
                         <img src=@Url.Content(item.ThumbNailURL) alt="@item.Description" />
@@ -56,11 +57,11 @@
                     </td>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.PaintingTypeDescription)
+                        @Html.DisplayName(item.PaintingEnum.GetDisplayName())
                     </td>
 
                     <td>
-                        @Html.ActionLink("Edit/Details", "EditArt", "ArtWork", new { id = item.Id },null)
+                        @Html.ActionLink("Edit/Details", "EditArt", "ArtWork", new { id = item.Id }, null)
                     </td>
                 </tr>
             }
@@ -68,11 +69,13 @@
     </table>
     <hr />
     <hr />
+
+    <input type="submit" value="Delete" class="btn btn-primary" id="btnDelete" />
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
-        <input type="submit" value="Delete" class="btn btn-primary" />
+
         <hr />
         <hr />
         <h4>
@@ -83,22 +86,6 @@
 
     }
 </div>
-<script>
-    $("#ckbAll").change(function () {  //"select all" change
-        $(".checkbox").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
-    });
 
-    //".checkbox" change
-    $('.checkbox').change(function () {
-        //uncheck "select all", if one of the listed checkbox item is unchecked
-        if (false == $(this).prop("checked")) { //if this item is unchecked
-            $("#ckbAll").prop('checked', false); //change "select all" checked status to false
-        }
-        //check "select all" if all checkbox items are checked
-        if ($('.checkbox:checked').length == $('.checkbox').length) {
-            $("#ckbAll").prop('checked', true);
-        }
-    });
-</script>
 
 

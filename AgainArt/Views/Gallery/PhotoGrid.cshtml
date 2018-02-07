@@ -1,5 +1,5 @@
 ﻿@model AgainArt.Models.Gallery
-
+@using AgainArt.Models
 
 <!-- Photo grid Category -->
 <div class="w3-content w3-padding-large w3-margin-top">
@@ -11,8 +11,10 @@
                 if (item != null)
                 {
                     <div class="w3-quarter">
-                        <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingTypeDescription.Replace(" ","")" />
-                        <p>@item.PaintingTypeDescription</p>
+                        <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingEnum.ToString().Replace(" ","")" />
+                        <p>
+                            @Html.DisplayName(item.PaintingEnum.GetDisplayName())
+                        </p>
                     </div>
                 }
             }
@@ -28,15 +30,13 @@
             {
                 if (item != null)
                 {
-                    <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingTypeDescription.Replace(" ","")" />
+                    <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingEnum.ToString().Replace(" ","")" />
                 }
             }
         }
     </div>
 </div>
 <!-- Photo grid -->
-
-
 <!-- Modal for full size images on click-->
 <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
     <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>

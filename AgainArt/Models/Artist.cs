@@ -60,6 +60,7 @@ namespace AgainArt.Models
 
         }
 
+        [Display(Name = "Telephone Number")]
         public string TelephoneNumber
         {
             get;

@@ -111,10 +111,7 @@ namespace AgainArt.Controllers
 
         public ActionResult AddArt(HttpPostedFileBase file, ArtWork objArt)
         {
-            //var errors = ModelState.Values.SelectMany(v => v.Errors);
 
-            //if (ModelState.IsValid)
-            //{
             if (file != null)
             {
                 string savedFileName = string.Empty;
@@ -124,7 +121,7 @@ namespace AgainArt.Controllers
                 {
                     ArtWork objArtWork = new ArtWork();
                     //objArtWork.FileURL = file.FileName;
-                    objArtWork.OriginalName = file.FileName;
+                    objArtWork.OriginalName = Path.GetFileName(file.FileName);
                     objArtWork.IdArtista = 1;// na mao o codigo do artista
                     objArtWork.GeneratedName = Path.GetFileNameWithoutExtension(objArtWork.OriginalName) + "_" + Guid.NewGuid() + Path.GetExtension(objArtWork.OriginalName);
                     objArtWork.ImageData = new byte[file.ContentLength];
@@ -154,7 +151,7 @@ namespace AgainArt.Controllers
                 catch (Exception ex)
                 {
                     DeleteFile(savedFileName, savedThumbFile);
-                    Danger("It Looks like something went wrong. Please try again later." + ex.StackTrace);
+                    Danger("It looks like something went wrong. Please try again later." + ex.StackTrace);
 
 
                 }
@@ -269,15 +266,47 @@ namespace AgainArt.Controllers
         [HttpPost]
         public ActionResult RemoveArt(ArtWork objArt)
         {
-
             return View("RemoveArt", new Gallery() { LstArtWork = List() });
         }
+
 
         [HttpPost]
         public ActionResult Delete(string[] ids)
         {
+            List<string> ids2 = ids.ToList();
+            MVCArtistContext db = new Models.MVCArtistContext();
+
+            try
+            {
+                List<ArtWork> lstArt = new List<ArtWork>();
+                lstArt = db.ArtWork.Where(a => ids.Any(i => a.Id.ToString().Contains(i))).ToList();
+
+                //Save image to file
+
+                foreach (var item in lstArt)
+                {
+                    var filePathOriginal = Server.MapPath(Url.Content("~/Content/ArtWorkImages/Original"));
+                    var filePathThumbnail = Server.MapPath(Url.Content("~/Content/ArtWorkImages/Thumbnail"));
+
+                    var savedFileName = Path.Combine(filePathOriginal, item.GeneratedName);
+                    var savedThumbFile = Path.Combine(filePathThumbnail, item.GeneratedName);
+
+                    DeleteFile(savedFileName, savedThumbFile);
+                }
+
+                db.ArtWork.RemoveRange(lstArt);
+                db.SaveChanges();
+                Success(string.Format("The information was successfully saved in the database."), true);
+            }
+            catch (Exception ex)
+            {
+                Danger("It looks like something went wrong. Please try again later." + ex.StackTrace);
+            }
+
+
             return RedirectToAction("RemoveArt");
         }
+
 
         public ActionResult EditArt(int? id)
         {

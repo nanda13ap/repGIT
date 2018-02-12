@@ -115,7 +115,6 @@
   <ItemGroup>
     <Folder Include="Content\ArtWorkImages\Original\" />
     <Folder Include="Content\ArtWorkImages\ThumbNail\" />
-    <Folder Include="Properties\" />
     <Folder Include="Views\BaseAlert\" />
     <Folder Include="Views\Email\" />
   </ItemGroup>
@@ -167,11 +166,12 @@
     <Content Include="Views\Shared\_Alerts.cshtml" />
     <Content Include="Views\ErrorHandler\Error.cshtml" />
     <Content Include="Views\Gallery\View.cshtml" />
-    <None Include="FTPProductionDeploy.pubxml" />
-    <None Include="patrickkluga.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProductionDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\patrickkluga.com - Web Deploy.pubxml" />
     <Content Include="Views\ArtWork\View.cshtml" />
-    <None Include="WebDeployProfile.pubxml" />
-    <None Include="FileSystemDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\teste.pubxml" />
+    <None Include="Properties\PublishProfiles\WebDeployProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FileSystemDeploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\PatrickErika.jpg" />
     <Content Include="Scripts\jquery-1.10.2.js" />

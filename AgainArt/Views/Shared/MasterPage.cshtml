@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <script src="~/Scripts/jquery-1.10.2.js"></script>
-    @*<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>*@
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    @*<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">*@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
-    <script src="~/Scripts/RemoveArtPaget.js">
-    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/RemoveArtPaget.js">
+        </script>*@
     <style>
         body, h1, h2, h3, h4, h5 {
             font-family: "Raleway", sans-serif;
@@ -27,6 +27,12 @@
             .w3-third img:hover {
                 opacity: 1;
             }
+
+        html {
+            /*overflow: -moz-scrollbars-vertical !important;*/
+            overflow-y: scroll !important;
+            overflow-x: visible !important;
+        }
     </style>
 </head>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
@@ -116,10 +122,12 @@
         }
 
         function getImages(element) {
-            $(".wchild img" + "." + $(element).attr('class')).show();
+            //$(".wchild img" + "." + $(element).attr('class')).show();
 
-            $(".wchild img").not("." + $(element).attr('class')).hide();
+            //$(".wchild img").not("." + $(element).attr('class')).hide();
+            $(".childImage" + "." + $(element).attr('class')).show();
 
+            $(".childImage").not("." + $(element).attr('class')).hide();
 
         }
 

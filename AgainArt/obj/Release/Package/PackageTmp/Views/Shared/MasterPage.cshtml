@@ -1,12 +1,18 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>W3.CSS Template</title>
+    <title>Patrick Kluga</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <script src="~/Scripts/jquery-1.10.2.js"></script>
+    @*<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>*@
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+    @*<script src="~/Scripts/RemoveArtPaget.js">
+    </script>*@
     <style>
         body, h1, h2, h3, h4, h5 {
             font-family: "Raleway", sans-serif;
@@ -45,10 +51,10 @@
         </h1>
 
 
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a>
-        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT ME</a>
-        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large"><h3>CLOSE</h3></a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"><h4>PORTFOLIO</h4></a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"><h4>ABOUT ME</h4></a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"><h4>CONTACT</h4></a>
     </nav>
 
     <!-- Top menu on small screens -->
@@ -110,7 +116,6 @@
         }
 
         function getImages(element) {
-            //alert($(element).attr('class'));
             $(".wchild img" + "." + $(element).attr('class')).show();
 
             $(".wchild img").not("." + $(element).attr('class')).hide();

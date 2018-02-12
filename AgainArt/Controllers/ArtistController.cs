@@ -59,6 +59,7 @@ namespace AgainArt.Controllers
                 dbArtista.Email = objArtista.Email;
                 dbArtista.Name = objArtista.Name;
                 dbArtista.LastName = objArtista.LastName;
+                dbArtista.TelephoneNumber = objArtista.TelephoneNumber;
 
                 db.Entry<Artist>(dbArtista).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
@@ -67,7 +68,7 @@ namespace AgainArt.Controllers
             }
             catch
             {
-                Danger("It Looks like something went wrong. Please try again later.");
+                Danger("It looks like something went wrong. Please try again later.");
             }
 
             return RedirectToAction("Index");

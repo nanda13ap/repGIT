@@ -9,7 +9,7 @@
     <WebStackScaffolding_LayoutPageFile>~/Views/Shared/MasterPage.cshtml</WebStackScaffolding_LayoutPageFile>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
-    <NameOfLastUsedPublishProfile>patrickkluga.com - Web Deploy %283%29</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>FTPProductionDeploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

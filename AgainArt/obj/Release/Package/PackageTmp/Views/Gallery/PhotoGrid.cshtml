@@ -11,10 +11,10 @@
                 if (item != null)
                 {
                     <div class="w3-quarter">
-                        <img src=@Url.Content(item.FileURL) style="width:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this)" alt="@item.Description" class="@item.PaintingEnum.ToString().Replace(" ","")" />
-                        <p>
+                        <img src=@Url.Content(item.ThumbNailURL) style="width:100%; height:100%; cursor: pointer !important; opacity: 0.8 !important" onclick="getImages(this, '@item.PaintingEnum.GetDisplayName()')" alt="@item.Description" class="@item.PaintingEnum.ToString().Replace(" ","")" />
+                        <h4>
                             @Html.DisplayName(item.PaintingEnum.GetDisplayName())
-                        </p>
+                        </h4>
                     </div>
                 }
             }
@@ -22,8 +22,13 @@
     </div>
 </div>
 
-<div class="w3-content w3-padding-large w3-margin-top">
+<div class="w3-content w3-padding-large w3-margin-top" id="divAllImages">
     <div class="w3-image w3-row wchild">
+        <hr />
+        <hr />
+        <hr />
+        <div id="selectedCategory"></div>
+        <hr />
         @if (Model != null && (Model.LstArtWork != null))
         {
             foreach (var item in Model.LstArtWork)

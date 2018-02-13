@@ -121,11 +121,18 @@
             captionText.innerHTML = element.alt;
         }
 
-        function getImages(element) {
+        function getImages(element, selectedCategory) {
             $(".childImage" + "." + $(element).attr('class')).show();
 
             $(".childImage").not("." + $(element).attr('class')).hide();
 
+            $("#selectedCategory").children().remove();
+            $("#selectedCategory").append("<h3>" + selectedCategory + "</h3>");
+
+            $('html,body').animate({
+                scrollTop: $("#divAllImages").offset().top
+            },
+    'slow');
         }
 
     </script>

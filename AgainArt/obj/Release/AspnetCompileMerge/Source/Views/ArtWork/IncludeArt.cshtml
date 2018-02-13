@@ -7,10 +7,7 @@
 
 
 <link href="@Url.Content("~/Css/GeneralInput.css")" rel="stylesheet" type="text/css" />
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 <div class="w3-content w3-padding-large w3-margin-top">
 
@@ -20,14 +17,10 @@
 
         <div class="form-horizontal">
             <h2>Add your paintings here</h2>
-            <h4></h4>
             <hr />
             <hr />
-
             <hr />
-
             <hr />
-
             <hr />
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -68,12 +61,8 @@
                 <div class="form-group">
                     <hr />
                     <hr />
-                    <hr />
-                    <hr />
-                    <hr />
-                    <hr />
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
+                        <input type="submit" value="Save" class="btn btn-primary" />
                     </div>
 
                 </div>
@@ -82,9 +71,14 @@
 
     }
     <div>
-        @Html.ActionLink("Back to List", "Gallery", "Index")
+        <hr />
+        <hr />
+        <hr />
+        <h4>
+            @Html.ActionLink("Manage my artwork", "Index", "ArtWork") |
+            @Html.ActionLink("Manage my profile", "Index", "Artist")
+        </h4>
     </div>
-
 
     <hr />
     <hr />

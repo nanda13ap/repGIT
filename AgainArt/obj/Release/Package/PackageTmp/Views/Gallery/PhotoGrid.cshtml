@@ -30,7 +30,13 @@
             {
                 if (item != null)
                 {
-                    <img src=@Url.Content(item.FileURL) style="width:100%; display:none" onclick="onClick(this)" alt="@item.Description" class="@item.PaintingEnum.ToString().Replace(" ","")" />
+                    <div class="childImage @item.PaintingEnum.ToString().Replace(" ","")" style="display:none; margin:2%; width:auto">
+
+                        <img src=@Url.Content(item.FileURL) style="width:100%" onclick="onClick(this)" alt="@item.Description" />
+                        <p style="padding-top:2%; font-family:Merriweather; font-weight:bold; padding-bottom:4% ; font-style:italic">
+                            @Html.DisplayName(item.Description)
+                        </p>
+                    </div>
                 }
             }
         }

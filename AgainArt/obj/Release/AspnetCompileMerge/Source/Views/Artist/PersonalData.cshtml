@@ -6,19 +6,19 @@
 }
 
 <link href="@Url.Content("~/Css/Personaldata.css")" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 <div class="w3-content w3-padding-large w3-margin-top">
     <h2>Personal Data</h2>
+    <hr />
+    <hr />
+    <hr />
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.Id)
 
@@ -65,13 +65,18 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" formaction=@Url.Content("~/Artist/ManageInfo") formmethod="post" />
+                    <input type="submit" value="Save" class="btn btn-primary" formaction=@Url.Content("~/Artist/ManageInfo") formmethod="post" />
                 </div>
             </div>
         </div>
     }
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        <hr />
+        <hr />
+        <hr />
+        <h4>
+            @Html.ActionLink("Manage my artwork", "Index", "ArtWork")
+        </h4>
     </div>
     <p>
 

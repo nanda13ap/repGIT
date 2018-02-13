@@ -70,8 +70,10 @@
     <hr />
     <hr />
 
-    <input type="submit" value="Delete" class="btn btn-primary" id="btnDelete" />
-
+    <input type="submit" value="Delete" class="btn btn-primary" id="btnDelete" style="display:none" />
+    <input type="submit" value="Delete" class="btn btn-primary" id="btnFakeDelete" />
+    <input type="submit" value="Whatever" class="btn btn-primary" id="btnUpdatePage" style="display:none"  formaction=""/>
+    @Html.ActionLink("Upload page while I dont fix the delete refresh", "Index", "ArtWork", new { @id="linkUpdatePage"})
 
     @using (Html.BeginForm())
     {
@@ -88,8 +90,6 @@
 
     }
 </div>
-
-<button class="btn btn-default" id="btn-confirm">Confirm</button>
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="mi-modal">
     <div class="modal-dialog modal-sm">
@@ -131,7 +131,7 @@
         });
 
 
-        
+
     });
 
     $("#btnDelete").click(function () {
@@ -148,7 +148,8 @@
             //contentType: 'application/json; charset=utf-8',
             //dataType: 'json',// tipo q espero q o servidor retorne
             success: function (data) {
-                alert("foi");//$('#spanResults').text(data.join(','));
+                alert("Record(s) successfully deleted.");//$('#spanResults').text(data.join(','));
+                $('#linkUpdatePage').trigger('click');
             },
             error: function (e) {
                 //alert(e.arguments);
@@ -159,8 +160,16 @@
 
     var modalConfirm = function (callback) {
 
-        $("#btn-confirm").on("click", function () {
-            $("#mi-modal").modal('show');
+        $("#btnFakeDelete").on("click", function () {
+            var nSelected = $('.checkbox:checked').length;
+            if (nSelected > 0) {
+                $("#mi-modal").modal('show');
+            }
+            else
+            {
+                alert('Select at least one record.')
+            }
+
         });
 
         $("#modal-btn-si").on("click", function () {

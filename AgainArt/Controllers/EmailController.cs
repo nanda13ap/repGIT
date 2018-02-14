@@ -66,7 +66,7 @@ namespace AgainArt.Controllers
                 Danger("It looks like something went wrong. Please try again later.");
             }
 
-            return RedirectToAction("Index", "Gallery", ModelState);
+            return RedirectToAction("Index", "Gallery");
 
         }
     }

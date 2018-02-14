@@ -39,7 +39,7 @@
 
                         <img src=@Url.Content(item.FileURL) style="width:100%" onclick="onClick(this)" alt="@item.Description" />
                         <p style="padding-top:2%; font-family:Merriweather; font-weight:bold; padding-bottom:4% ; font-style:italic">
-                            @Html.DisplayName(item.Description)
+                            @Html.DisplayFor(modelItem => item.Description)
                         </p>
                     </div>
                 }

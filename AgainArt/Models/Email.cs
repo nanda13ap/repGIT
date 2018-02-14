@@ -12,15 +12,16 @@ namespace AgainArt.Models
         [Required]
         public string Name { get; set; }
 
-
+        [Required]
         [DisplayName("Email")]
-        [Required, EmailAddress]
+        [EmailAddress]
         public string From { get; set; }
 
         public string To { get; set; }
 
         public string Subject { get; set; }
 
+        [Required]
         [DisplayName("Message")]
         [StringLength(10000, MinimumLength = 5, ErrorMessage = "Your message can be from 5 to 10000 characters.")]
         public string Body { get; set; }

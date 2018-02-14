@@ -8,5 +8,5 @@
 
 @RenderPage("~/Views/Gallery/PhotoGrid.cshtml")
 @RenderPage("~/Views/Gallery/AboutSection.cshtml")
-@RenderPage("~/Views/Gallery/ContactSection.cshtml")
+@Html.Partial("~/Views/Gallery/ContactSection.cshtml", Model.Email)
 

@@ -23,8 +23,13 @@ namespace AgainArt.Controllers
 
             TempData["ArtistArt"] = galleryObject.Artist;
 
+            if (TempData["EmailErrors"] != null)
+            {
+                galleryObject.Email = TempData["EmailErrors"] as Email;
+            }
             return View("Gallery", galleryObject);
         }
+
 
         private static ArtWorkController GetArtistInfo(Gallery galleryObject)
         {

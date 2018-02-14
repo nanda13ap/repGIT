@@ -149,8 +149,11 @@
     <Compile Include="Models\Util.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\generalFont.css" />
     <Content Include="Css\generalInput.css" />
     <Content Include="Css\personalData.css" />
+    <Content Include="Css\w3.css" />
     <Content Include="Images\Bears.jpg" />
     <Content Include="Images\boy.jpg" />
     <Content Include="Images\girl.jpg" />
@@ -158,6 +161,7 @@
     <Content Include="Images\girl_train.jpg" />
     <Content Include="Images\man_bench.jpg" />
     <Content Include="Images\natureboy.jpg" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\RemoveArtPaget.js" />
     <Content Include="Views\Artist\PersonalData.cshtml" />
     <Content Include="Views\ArtWork\RemoveArt.cshtml" />

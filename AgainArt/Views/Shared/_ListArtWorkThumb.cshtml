@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AgainArt.Models.ArtWork>
+@using AgainArt.Models;
+
+<table class="table table-striped table-hover table-responsive " style="background-color:#f9f9f9">
+    <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="ckbAll" />
+            </th>
+            <th></th>
+            <th>
+                PAINTING NAME
+            </th>
+            <th>
+                DESCRIPTION
+            </th>
+            <th>
+                CLASSIFICATION
+            </th>
+
+            <th></th>
+        </tr>
+    <thead />
+
+
+    <tbody>
+        @foreach (var item in Model)
+            {
+
+            <tr>
+                <td>
+                    <input type="checkbox" id="ckbEach" class="checkbox" value="@item.Id" />
+                </td>
+                <td>
+                    <img src=@Url.Content(item.ThumbNailURL) alt="@item.Description" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginalName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description);
+                </td>
+
+                <td>
+                    @Html.DisplayName(item.PaintingEnum.GetDisplayName())
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit/Details", "EditArt", "ArtWork", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

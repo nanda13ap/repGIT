@@ -12,12 +12,12 @@ C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Razor.dll
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\EntityFramework.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\EntityFramework.SqlServer.xml
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.Razor.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.Helpers.xml
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Deployment.xml
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.xml
-C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Razor.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.Mvc.xml
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.Razor.xml
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.xml
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\bin\System.Web.WebPages.Razor.xml
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.initialcatalog.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.Migrations.requiredfields.resources
 C:\Users\rodrfern\Source\Repos\repGIT\AgainArt\obj\Debug\AgainArt.csproj.GenerateResource.Cache

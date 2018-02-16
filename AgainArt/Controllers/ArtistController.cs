@@ -50,6 +50,8 @@ namespace AgainArt.Controllers
         [HttpPost]
         public ActionResult ManageInfo(Artist objArtista)
         {
+            ClearAll();
+
             try
             {
                 MVCArtistContext db = new MVCArtistContext();

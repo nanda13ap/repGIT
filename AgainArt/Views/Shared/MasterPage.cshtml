@@ -90,8 +90,9 @@
 
         @RenderBody()
 
-        @{ Html.RenderPartial("_Alerts"); }
-
+        <div id="divAlertaMeu">
+            @{ Html.RenderPartial("_Alerts"); }
+        </div>
         <div id="footer" class="w3-black w3-center w3-padding-24">
             <div class="content">
                 Powered by

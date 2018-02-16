@@ -16,64 +16,16 @@
         @Html.ActionLink("New Painting", "IncludeArt", "Artwork")
     </h4>
     <hr />
-    <table class="table table-striped table-hover table-responsive " style="background-color:#f9f9f9">
-        <thead>
-            <tr>
-                <th>
-                    <input type="checkbox" id="ckbAll" />
-                </th>
-                <th></th>
-                <th>
-                    PAINTING NAME
-                </th>
-                <th>
-                    DESCRIPTION
-                </th>
-                <th>
-                    CLASSIFICATION
-                </th>
-
-                <th></th>
-            </tr>
-        <thead />
-
-
-        <tbody>
-            @foreach (var item in Model)
-            {
-
-                <tr>
-                    <td>
-                        <input type="checkbox" id="ckbEach" class="checkbox" value="@item.Id" />
-                    </td>
-                    <td>
-                        <img src=@Url.Content(item.ThumbNailURL) alt="@item.Description" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.OriginalName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description);
-                    </td>
-
-                    <td>
-                        @Html.DisplayName(item.PaintingEnum.GetDisplayName())
-                    </td>
-
-                    <td>
-                        @Html.ActionLink("Edit/Details", "EditArt", "ArtWork", new { id = item.Id }, null)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div id="divPaintingsRemove">
+        @{ Html.RenderPartial("_ListArtWorkThumb"); }
+    </div>
     <hr />
     <hr />
 
     <input type="submit" value="Delete" class="btn btn-primary" id="btnDelete" style="display:none" />
     <input type="submit" value="Delete" class="btn btn-primary" id="btnFakeDelete" />
-    <input type="submit" value="Whatever" class="btn btn-primary" id="btnUpdatePage" style="display:none"  formaction=""/>
-    @Html.ActionLink("Upload page while I dont fix the delete refresh", "Index", "ArtWork", new { @id="linkUpdatePage"})
+    <input type="submit" value="Whatever" class="btn btn-primary" id="btnUpdatePage" style="display:none" formaction="" />
+   @* @Html.ActionLink("Upload page while I dont fix the delete refresh", "Index", "ArtWork", new { @id = "linkUpdatePage" })*@
 
     @using (Html.BeginForm())
     {
@@ -148,8 +100,10 @@
             //contentType: 'application/json; charset=utf-8',
             //dataType: 'json',// tipo q espero q o servidor retorne
             success: function (data) {
-                alert("Record(s) successfully deleted.");//$('#spanResults').text(data.join(','));
-                $('#linkUpdatePage').trigger('click');
+                //alert("Record(s) successfully deleted.");
+               // $("#divPaintingsRemove").load('@Url.Action("LoadPartialListArtWork", "ArtWork")');
+                $("#divPaintingsRemove").load('@Url.Action("LoadPartialListArtWork", "ArtWork")');
+                $("#divAlertaMeu").load('@Url.Action("LoadAlerts","Email")');
             },
             error: function (e) {
                 //alert(e.arguments);
@@ -165,8 +119,7 @@
             if (nSelected > 0) {
                 $("#mi-modal").modal('show');
             }
-            else
-            {
+            else {
                 alert('Select at least one record.')
             }
 
@@ -187,8 +140,7 @@
         if (confirm) {
             $('#btnDelete').click();
         } else {
-            ////Acciones si el usuario no confirma
-            //$("#result").html("NO CONFIRMADO");
+
         }
     });
 </script>

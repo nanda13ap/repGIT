@@ -23,6 +23,7 @@ namespace AgainArt.Controllers
             return RedirectToAction("RemoveArt");
         }
 
+
         private static ArtWorkController GetArtistInfo(Gallery galleryObject)
         {
             ArtWorkController objAkController = new ArtWorkController();
@@ -263,6 +264,11 @@ namespace AgainArt.Controllers
             return View("RemoveArt", List());
         }
 
+        public PartialViewResult LoadPartialListArtWork()
+        {
+            return PartialView("_ListArtWorkThumb", List());
+        }
+
         [HttpPost]
         public ActionResult RemoveArt(ArtWork objArt)
         {
@@ -271,8 +277,9 @@ namespace AgainArt.Controllers
 
 
         [HttpPost]
-        public ActionResult Delete(string[] ids)
+        public JsonResult Delete(string[] ids)
         {
+            ClearAll();
             List<string> ids2 = ids.ToList();
             MVCArtistContext db = new Models.MVCArtistContext();
 
@@ -304,7 +311,7 @@ namespace AgainArt.Controllers
             }
 
 
-            return RedirectToAction("RemoveArt");
+            return Json(true);// RedirectToAction("RemoveArt");
         }
 
 
@@ -319,6 +326,8 @@ namespace AgainArt.Controllers
         [HttpPost]
         public ActionResult Edit(ArtWork objArtWork)
         {
+            ClearAll();
+
             try
             {
                 MVCArtistContext db = new MVCArtistContext();
@@ -329,7 +338,7 @@ namespace AgainArt.Controllers
             }
             catch
             {
-                Danger("It Looks like something went wrong. Please try again later.");
+                Danger("It looks like something went wrong. Please try again later.");
             }
             return RedirectToAction("EditArt", new { id = objArtWork.Id });
         }

@@ -44,6 +44,12 @@ namespace AgainArt.Controllers
 
             TempData[Alert.TempDataKey] = alerts;
         }
-
+        public void ClearAll()
+        {
+            if (TempData.ContainsKey(Alert.TempDataKey))
+            {
+                TempData[Alert.TempDataKey] = null;
+            }
+        }
     }
 }
